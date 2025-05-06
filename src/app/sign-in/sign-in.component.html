@@ -1,0 +1,11 @@
+<h2>Sign Up</h2>
+<form (ngSubmit)="register()">
+  <input type="text" placeholder="Login" [(ngModel)]="login" name="login" required>
+  <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+  <button type="submit">Register</button>
+</form>
+<p>Masz już konto? Zaloguj się. 
+  <button (click)="goToLogin()" style="background: none; border: none; color: blue; text-decoration: underline; cursor: pointer;">
+    Login
+  </button>
+</p>

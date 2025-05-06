@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  font-family: Tahoma, Verdana, sans-serif;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  text-wrap: balance;
+  flex: 50%;
+  margin: 8%;
+}
+
+.flex-item-left {
+  text-align: left;
+  color: #9c8792e3;
+  padding: 10px;
+  flex: 40%;
+}
+h2 {
+  font-weight: 500;
+  color: #9c8792;
+}
+
+h6 {
+  font-weight: 230;
+  line-height: 32px;
+}
+
+.flex-item-right {
+  text-align: left;
+  flex: 40%;
+}
+.ad-text {
+  margin-top: 2%;
+  text-wrap: balance;
+  width: 350px;
+  font-size: 15px;
+}
+.flex-item-down{
+ margin: 1%;
+  height: auto;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+    
+}
+.flex-item-left>.title-under{
+    font-size: 35px;
+}
+.btn-home {
+  color: #1e1e1e;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  display: inline;
+  width: auto;
+  padding: 10px;
+  cursor: pointer;
+  background: linear-gradient(
+    268.96deg,
+    #6b5568 -7.34%,
+    #a86367 34.56%,
+    #847382 107.34%
+  );
+  border: 3px solid #6b5568b0;
+  box-shadow: 1px 6px #664e5cd3;
+  border-radius: 8px;
+}
+
+.btn-home:hover {
+  box-shadow: 0 5px #5a4150d3;
+  transform: translateY(2px);
+}
+
+.btn-home:active {
+  box-shadow: 0 0px 0px #5a4150d3;
+  transform: translateY(5px);
+}
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+    text-wrap: balance;
+    margin: -10%;
+  }
+  .flex-item-left {
+    margin: 10%;
+    text-align: center;
+  }
+  .flex-item-right {
+    text-align: center;
+  }
+  .ad-text {
+    text-align: center;
+    text-wrap: balance;
+  }
+}
+.footer {
+  height: 20px;
+  color: #9c8792e3;
+  text-align: center;
+  justify-items: center;
+  margin-bottom: 80px;
+}
+.footer-line {
+  margin: 40px;
+  border-top: #9c8792;
+  border-top: 1px solid;
+}
+.footer-text {
+  margin-top: 20px;
+}
+.animol{
+  border-radius: 380px;
+}
+img{
+  border-radius: 10px;
+}
