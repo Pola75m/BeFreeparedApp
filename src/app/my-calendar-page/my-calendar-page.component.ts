@@ -14,7 +14,10 @@ import { DateTime } from 'luxon';
 })
 export class MyCalendarPageComponent {
   tasks: Task[] = [];
-  newTask: Task = {id: '', task_name: '', task_status: '', deadline: '', userId: '' };
+  newTask: Task = {
+    id: '', task_name: '', task_status: '', deadline: '', userId: '',
+    username: ''
+  };
   userId: string ='';
   username: string = '';
 
@@ -25,6 +28,7 @@ export class MyCalendarPageComponent {
         this.username = user.login;
       }
     }
+
 
   // interface do meetingow
   get meetings(): { [date: string]: string[] } {

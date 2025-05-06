@@ -12,7 +12,7 @@ import { DateTime } from 'luxon';
 })
 export class MyListComponent implements OnInit {
   tasks: Task[] = [];
-  newTask: Task = {id: '', task_name: '', task_status: '', deadline: '', userId: '' };
+  newTask: Task = {id: '', task_name: '', task_status: '', deadline: '', userId: '', username:'' };
   userId: string ='';
   editingTask: Task | null = null;
 
@@ -54,7 +54,7 @@ export class MyListComponent implements OnInit {
       if (task.deadline === '-' || task.deadline === null) {
         task.deadline = null;
       this.tasks.push(task);
-      this.newTask = { id: '', task_name: '', task_status: '', deadline: '', userId: '' };
+      this.newTask = { id: '', task_name: '', task_status: '', deadline: '', userId: '', username:'' };
       // w takiej kolejnosci jak w bazie danych ^
     }});
   }
