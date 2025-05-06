@@ -133,3 +133,8 @@ li > a:hover, .dropdown-content a:hover {
     background: #847382;
     color:#1e1e1e;
 }
+
+.hello{
+  text-shadow: #896d85;
+  color:#6b5568;
+}

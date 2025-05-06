@@ -11,7 +11,15 @@ import { Router } from '@angular/router';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
-  constructor(private router: Router) {}
+
+  username: string = '';
+  constructor(private router: Router) {
+    const userData = localStorage.getItem('user');
+    if (userData){
+      const user = JSON.parse(userData);
+      this.username = user.login;
+    }
+  }
   
 //sprawdzanie zalogowania
   isLoggedIn(): boolean {

@@ -16,8 +16,15 @@ export class MyCalendarPageComponent {
   tasks: Task[] = [];
   newTask: Task = {id: '', task_name: '', task_status: '', deadline: '', userId: '' };
   userId: string ='';
+  username: string = '';
 
-  constructor(private taskService: TaskService) {}
+  constructor(private taskService: TaskService) {
+      const userData = localStorage.getItem('user');
+      if (userData){
+        const user = JSON.parse(userData);
+        this.username = user.login;
+      }
+    }
 
   // interface do meetingow
   get meetings(): { [date: string]: string[] } {
@@ -35,12 +42,6 @@ export class MyCalendarPageComponent {
     }
     return result;
   }
-    // formatowanie daty
-    formatDate(dateString: string): string {
-      if (dateString === null || !dateString) return '-';
-      //const date = new Date(dateString);
-      return DateTime.fromISO(dateString, { zone: 'utc' }).startOf('day').toFormat('yyyy-MM-dd');
-    }
   // pokazywanie istniejacych zadan
   ngOnInit() {
     const user = JSON.parse(localStorage.getItem('user')!);
@@ -55,8 +56,7 @@ fetchTasks() {
     this.tasks = tasks
     .map(task => ({
       ...task,
-      deadline: task.deadline === null || task.deadline === '-' ? '-' : this.formatDate(task.deadline)
-    }))
+     }))
   });
 }
 }

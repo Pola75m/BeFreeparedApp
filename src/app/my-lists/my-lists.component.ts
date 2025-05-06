@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TaskService, Task } from '../task.service';
-import { CalendarComponent } from '../calendar/calendar.component';
 import { DateTime } from 'luxon';
 
 @Component({
   selector: 'app-my-lists',
   standalone: true,
-  imports: [CommonModule, FormsModule, CalendarComponent],
+  imports: [CommonModule, FormsModule],
   templateUrl: 'my-lists.component.html',
 })
 export class MyListComponent implements OnInit {
@@ -36,14 +35,6 @@ export class MyListComponent implements OnInit {
     return result;
   }
 
-
-  // formatowanie daty
-  formatDate(dateString: string): string {
-    if (dateString === null || !dateString) return '-';
-    //const date = new Date(dateString);
-    return DateTime.fromISO(dateString, { zone: 'utc' }).startOf('day').toFormat('yyyy-MM-dd');
-  }
-
   // pokazywanie istniejacych zadan
   ngOnInit() {
     const user = JSON.parse(localStorage.getItem('user')!);
@@ -62,13 +53,10 @@ export class MyListComponent implements OnInit {
     this.taskService.addTask(this.newTask).subscribe((task) => {
       if (task.deadline === '-' || task.deadline === null) {
         task.deadline = null;
-      } else {
-        task.deadline = this.formatDate(task.deadline);
-      }
       this.tasks.push(task);
       this.newTask = { id: '', task_name: '', task_status: '', deadline: '', userId: '' };
       // w takiej kolejnosci jak w bazie danych ^
-    });
+    }});
   }
 
   // edytowanie zadan
@@ -127,7 +115,6 @@ export class MyListComponent implements OnInit {
       this.tasks = tasks
       .map(task => ({
         ...task,
-        deadline: task.deadline === null || task.deadline === '-' ? '-' : this.formatDate(task.deadline)
       }))
     });
   }

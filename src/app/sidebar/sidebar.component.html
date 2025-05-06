@@ -28,6 +28,9 @@
     <li>
       <a routerLink="/editing" routerLinkActive="active">Ustawienia</a>
     </li>
+    <li>
+      <h3 class="hello">Cześć {{username}}!</h3>
+    </li>
   </ul>
   <div class="navbar-actions">
     <button *ngIf="!isLoggedIn()" class="btn-nav" routerLink="/login">Zaloguj się</button>
