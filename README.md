@@ -57,3 +57,32 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+ADDITIONAL:
+BACKEND-FILES:
+npm init -y npm i express multer mysql2 cors npm i
+
+DATABASE:
+CREATE DATABASE befreepareddb;
+
+CREATE TABLE images (
+id INT AUTO_INCREMENT PRIMARY KEY,
+user_id INT,
+file_name VARCHAR(255),
+file_path VARCHAR(255),
+uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE users (
+Uid INT AUTO_INCREMENT PRIMARY KEY,
+login varchar(255),
+password VARCHAR(255)
+);
+
+CREATE TABLE tasks (
+id INT AUTO_INCREMENT PRIMARY KEY,
+task_name VARCHAR(255),
+task_status VARCHAR(255),
+deadline DATE,
+userId INT
+);
