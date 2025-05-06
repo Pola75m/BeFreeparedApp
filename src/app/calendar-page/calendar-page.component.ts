@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import { DateTime, Info } from 'luxon';
 import { CommonModule } from '@angular/common';
 import { CalendarComponent } from "../calendar/calendar.component";
-import { Meetings } from '../calendar/meetings.interface';
 import { TaskService, Task } from '../task.service';
 
 
@@ -14,7 +13,6 @@ import { TaskService, Task } from '../task.service';
 })
 export class CalendarPageComponent {
   allMeetings: { [date: string]: string[] } = {};
-
   constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {
@@ -25,7 +23,7 @@ export class CalendarPageComponent {
         if (!task.deadline) continue;
         const date = DateTime.fromISO(task.deadline).toISODate()!;
         if (!result[date]) result[date] = [];
-        result[date].push(task.task_name + ` (${task.userId})`);
+        result[date].push(task.task_name + ` (${task.username})`);
       }
 
       this.allMeetings = result;

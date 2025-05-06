@@ -169,7 +169,7 @@ app.post('/tasks', (req, res) => {
     if (!userId) return res.status(400).send('Id usera jest potrzebne...');
 
     const query = 'SELECT * FROM tasks WHERE userId = ?';
-
+    
     db.query(query, [userId], (err, results) => {
       if (err) return res.status(500).send(err);
       const formattedResults = results.map(task => {
@@ -193,6 +193,7 @@ app.get('/all-tasks', (req, res) => {
 
   db.query(query, (err, results) => {
     if (err) return res.status(500).send(err);
+    console.log('Results:', results); 
     const formattedResults = results.map(task => {
       const date = task.deadline
         ? DateTime.fromJSDate(task.deadline, { zone: 'utc+1' }).toISODate()
