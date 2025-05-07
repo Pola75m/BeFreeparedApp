@@ -1,0 +1,80 @@
+<nav class="navbar">
+  <div class="navbar-logo">
+    <h4>BeFreepared</h4>
+  </div>
+  <ul class="navbar-links">
+    <li>
+      <a routerLink="/home" routerLinkActive="active">Strona główna</a>
+    </li>
+    <li>
+      <a routerLink="/my-lists" routerLinkActive="active">Moje zadania</a>
+    </li>
+    <li class="dropdown-nav" routerLinkActive="active, dropdown-active">
+      <a class="dropdown-btn">Kalendarz</a>
+      <div class="dropdown-content">
+        <a routerLink="/my-calendar-page" routerLinkActive="active">Mój Kalendarz</a>
+        <a routerLink="/calendar-page" routerLinkActive="active">Społeczność</a>
+      </div>
+    </li>
+    <li class="dropdown-nav" routerLinkActive="active, dropdown-active">
+      <a class="dropdown-btn">Galeria</a>
+      <div class="dropdown-content">
+        <a routerLink="/gallery" routerLinkActive="active">Moja Galeria</a>
+        <a routerLink="/community-gallery" routerLinkActive="active"
+          >Społeczność</a
+        >
+      </div>
+    </li>
+    <li>
+      <a routerLink="/editing" routerLinkActive="active">Ustawienia</a>
+    </li>
+    <li>
+      <h3 class="hello">Cześć {{username}}!</h3>
+    </li>
+  </ul>
+  <div class="navbar-actions">
+    <button *ngIf="!isLoggedIn()" class="btn-nav" routerLink="/login">Zaloguj się</button>
+    <button *ngIf="!isLoggedIn()" class="btn-nav" routerLink="/sign-in">Zarejestruj się</button>
+    <button *ngIf="isLoggedIn()" class="btn-nav" (click)="logout()">Wyloguj</button>
+  </div>
+</nav>
+
+<!--<nav>
+  <div class="navbar-logo">
+    <h4>BeFreepared</h4>
+  </div>
+  <ul class="navbar-links">
+    <li>
+      <a routerLink="/home" routerLinkActive="active">Strona główna</a>
+    </li>
+    <li>
+      <a routerLink="/my-lists" routerLinkActive="active">Moje zadania</a>
+    </li>
+    <li class="dropdown-nav" routerLinkActive="dropdown-active">
+      <a class="dropdown-btn">Kalendarz</a>
+        <div class="dropdown-content">
+          <a routerLink="/my-list" routerLinkActive="active">Mój Kalendarz</a>
+          <a routerLink="/calendar-page" routerLinkActive="active">Społeczność</a>
+        </div>
+    </li>
+    <li class="dropdown-nav" routerLinkActive="dropdown-active">
+      <a class="dropdown-btn">Galeria</a>
+        <div class="dropdown-content">
+          <a routerLink="/gallery" routerLinkActive="active">Moja Galeria</a>
+          <a routerLink="/community-gallery" routerLinkActive="active">Społeczność</a>
+        </div>
+    </li>
+    <li>
+      <a routerLink="/editing" routerLinkActive="active">Edytuj profil</a>
+    </li>
+    </ul>
+    <li>
+    <div class="navbar-actions">
+
+      <button class="btn-nav" routerLink="/sign-in">Zarejestruj się</button>
+      <button class="btn-nav" routerLink="/login">Zaloguj się</button>
+      <button *ngIf="isLoggedIn()" (click)="logout()" class="btn-nav">Wyloguj</button>
+    </div>
+  </li>
+<router-outlet></router-outlet>
+</nav>-->

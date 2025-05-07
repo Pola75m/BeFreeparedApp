@@ -1,0 +1,15 @@
+<h2>Edytowanie</h2>
+<form (ngSubmit)="updateProfile()">
+  <!-- nowe hasła -->
+  <label>Nowe hasło:</label>
+  <input type="password" [(ngModel)]="newPassword" name="newPassword" /><br>
+  <label>Potwierdź nowe hasło:</label>
+  <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" /><br>
+  <p *ngIf="passwordMismatch" style="color: red;">Hasła nie są zgodne</p>
+
+  <!-- usuwanie konta-->
+  <button (click)="deleteAccount()">Usuń moje konto</button><br>
+
+  <!-- przycisk koncowy -->
+  <button type="submit">Zapisz zmiany</button>
+</form>

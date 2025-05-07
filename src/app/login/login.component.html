@@ -1,0 +1,11 @@
+<h2>Login</h2>
+<form (ngSubmit)="loginUser()">
+  <input type="text" placeholder="Login" [(ngModel)]="login" name="login" required>
+  <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+  <button type="submit">Zaloguj</button>
+</form>
+<p>Nie masz konta? 
+    <button (click)="goToSignUp()" style="background: none; border: none; color: blue; text-decoration: underline; cursor: pointer;">
+      Zarejestruj się!
+    </button>
+  </p>

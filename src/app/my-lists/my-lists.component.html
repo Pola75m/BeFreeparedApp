@@ -1,0 +1,38 @@
+<div class="todo-container">
+    <h2>Twoja To-do list</h2>
+    <form (ngSubmit)="addTask()">
+      <input [(ngModel)]="newTask.task_name" name="title" placeholder="Task Title" required />
+      <select [(ngModel)]="newTask.task_status" name="status" placeholder="optional">
+        <option value="Bardzo ważne">Bardzo ważne</option>
+        <option value="Ważne">Ważne</option>
+        <option value="Nieważne">Nieważne</option>
+        <option value="Luźne">Luźne</option>
+      </select>
+      <input [(ngModel)]="newTask.deadline" name="date" type="date" placeholder="yyyy.mm.dd" />
+      <button type="submit">Dodaj zadanie</button>
+    </form>
+  
+    <h3>Lista zadań...</h3>
+    <ul>
+      <li *ngFor="let task of tasks">
+        <div>
+          {{ task.task_name }} - {{ task.task_status }} - {{ task.deadline }}
+          <button (click)="startEdit(task)">Edytuj</button>
+          <button (click)="deleteTask(task.id)">Usuń</button>
+        </div>
+        <div *ngIf="editingTask && editingTask.id === task.id">
+          <input [(ngModel)]="editingTask.task_name" placeholder="Task Title" />
+          <select [(ngModel)]="editingTask.task_status">
+            <option value="Bardzo ważne">Bardzo ważne</option>
+            <option value="Ważne">Ważne</option>
+            <option value="Nieważne">Nieważne</option>
+            <option value="Luźne">Luźne</option>
+          </select>
+          <input [(ngModel)]="editingTask.deadline" type="date" />
+          <button (click)="saveEdit()">Zapisz</button>
+          <button (click)="cancelEdit()">Anuluj</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  

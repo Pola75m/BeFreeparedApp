@@ -1,0 +1,140 @@
+/* Pracowniczek.pl */
+.navbar-logo {
+  width: auto;
+  height: 45px;
+  margin-top: 8px;
+  margin-left: 25px;
+  
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 30px;
+  line-height: 36px;
+
+  background: linear-gradient(
+    268.96deg,
+    #6b5568 -7.34%,
+    #a86367 34.56%,
+    #847382 107.34%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-emphasis-color: transparent;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.navbar {
+  height: 60px;
+  width: 100%;
+  background: #1e1e1e;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  top: 0;
+  position: -webkit-sticky;
+    position: sticky;
+}
+.navbar-links {
+  list-style-type: none;
+  overflow: hidden;
+  margin-left: 5px;
+  padding: 0px;
+  line-height: 1.5;
+  justify-items: center;
+}
+.navbar-links > li {
+  display: inline-block;
+  text-align: center;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  margin-left: 5px;
+}
+li > a {
+  padding: 10px;
+  text-decoration: none;
+  color: #7c6479;
+}
+li>a:hover{
+    color: #847382 !important;
+}
+li>a.active {
+  color: #a86366d5 !important;
+}
+li a, .dropdown-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px;
+  text-decoration: none;
+}
+li.dropdown-nav {
+  display: inline-block;
+}
+li.dropdown-nav.active {
+  color: #a86366d5 !important;
+}
+li.dropdown-nav.active > .dropdown-btn {
+  color: #a86366d5;  
+}
+.dropdown-content a.active {
+  color: #a86366d5;
+}
+li > a.active {
+  color: #a86366d5 !important;
+}
+li > a:hover, .dropdown-content a:hover {
+  color: #847382 !important;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:#1e1e1e;;
+  width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: #7c6479;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-nav:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a:hover {
+  color: #847382 !important;
+}
+.navbar > .navbar-actions {
+  position: absolute;
+  right: 0;
+  justify-items: center;
+  align-items: center;
+  width: auto;
+  margin-right: 20px;
+}
+.btn-nav {
+  background: #896d85 -7.34%;  
+  color:#1e1e1e;
+  border: 0px solid #7c6479;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 6px;
+  display: inline;
+  width: auto;
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-nav:hover{
+    background: #847382;
+    color:#1e1e1e;
+}
+
+.hello{
+  text-shadow: #896d85;
+  color:#6b5568;
+}
