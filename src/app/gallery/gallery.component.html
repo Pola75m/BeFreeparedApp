@@ -1,12 +1,34 @@
-  <button class="btn-upload"><span>Dodaj plik</span> </button>
+<!--<button type="button" class="btn-upload" (click)="fileInput.click()">
+  <span>Dodaj plik</span>
+  <input #fileInput type="file" (change)="onFileInput($event)" )>
+</button>
 <div class="container">
   <div class="header">
-      <h2>
-        Witaj w Galerii!
-      </h2>
+    <h2>
+      Witaj w Galerii!
+    </h2>
   </div>
-  <div class="content"> 
+  <div class="content">
 
   </div>
 </div>
-  
+-->
+<h2>Galeria użytkownika</h2>
+
+<form (submit)="uploadImage($event)">
+  <input type="file" (change)="onFileSelected($event)" required />
+  <button type="submit">Wyślij</button>
+</form>
+
+<div *ngIf="images.length > 0; else brakZdjec">
+  <h3>Twoje zdjęcia:</h3>
+  <div style="display: flex; flex-wrap: wrap; gap: 10px">
+    <div *ngFor="let img of images" style="width: 150px">
+      <img [src]="img.url" alt="{{ img.fileName }}" width="100%" />
+    </div>
+  </div>
+</div>
+
+<ng-template #brakZdjec>
+  <p>Brak zdjęć w galerii.</p>
+</ng-template>
