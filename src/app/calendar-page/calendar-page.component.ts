@@ -2,10 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { DateTime, Info } from 'luxon';
 import { CommonModule } from '@angular/common';
 import { CalendarComponent } from "../calendar/calendar.component";
-<<<<<<< HEAD
 import { Meetings } from '../calendar/meetings.interface';
-=======
->>>>>>> 32c42e4e0bdd3e09d36f595666bcf50d477a7f2a
 import { TaskService, Task } from '../task.service';
 
 
@@ -17,10 +14,6 @@ import { TaskService, Task } from '../task.service';
 })
 export class CalendarPageComponent {
   allMeetings: { [date: string]: string[] } = {};
-<<<<<<< HEAD
-
-=======
->>>>>>> 32c42e4e0bdd3e09d36f595666bcf50d477a7f2a
   constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {

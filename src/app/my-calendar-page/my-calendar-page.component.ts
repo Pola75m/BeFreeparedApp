@@ -16,27 +16,11 @@ export class MyCalendarPageComponent {
   tasks: Task[] = [];
   newTask: Task = {
     id: '', task_name: '', task_status: '', deadline: '', userId: '',
-<<<<<<< HEAD
     username: undefined
   };
   userId: string ='';
 
   constructor(private taskService: TaskService) {}
-=======
-    username: ''
-  };
-  userId: string ='';
-  username: string = '';
-
-  constructor(private taskService: TaskService) {
-      const userData = localStorage.getItem('user');
-      if (userData){
-        const user = JSON.parse(userData);
-        this.username = user.login;
-      }
-    }
-
->>>>>>> 32c42e4e0bdd3e09d36f595666bcf50d477a7f2a
 
   // interface do meetingow
   get meetings(): { [date: string]: string[] } {
@@ -54,15 +38,12 @@ export class MyCalendarPageComponent {
     }
     return result;
   }
-<<<<<<< HEAD
     // formatowanie daty
     formatDate(dateString: string): string {
       if (dateString === null || !dateString) return '-';
       //const date = new Date(dateString);
       return DateTime.fromISO(dateString, { zone: 'utc' }).startOf('day').toFormat('yyyy-MM-dd');
     }
-=======
->>>>>>> 32c42e4e0bdd3e09d36f595666bcf50d477a7f2a
   // pokazywanie istniejacych zadan
   ngOnInit() {
     const user = JSON.parse(localStorage.getItem('user')!);
@@ -77,12 +58,8 @@ fetchTasks() {
     this.tasks = tasks
     .map(task => ({
       ...task,
-<<<<<<< HEAD
       deadline: task.deadline === null || task.deadline === '-' ? '-' : this.formatDate(task.deadline)
     }))
-=======
-     }))
->>>>>>> 32c42e4e0bdd3e09d36f595666bcf50d477a7f2a
   });
 }
 }

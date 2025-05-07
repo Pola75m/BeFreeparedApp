@@ -162,35 +162,42 @@ app.post('/tasks', (req, res) => {
       res.send({ message: 'Zadanie usunięte pomyślnie' });
     });
   });
-  
+
   // Zbieranie wszystkich zadań w zależności od usera
   app.get('/tasks', (req, res) => {
     const userId = req.query.userId;
+    const status = req.query.status;
+  
     if (!userId) return res.status(400).send('Id usera jest potrzebne...');
-
-    const query = 'SELECT * FROM tasks WHERE userId = ?';
-<<<<<<< HEAD
-
-    db.query(query, [userId], (err, results) => {
+  
+    let query = 'SELECT * FROM tasks WHERE userId = ?';
+    const values = [userId];
+  
+    if (status !== undefined && status !== '') {
+      if (status === 'null') {
+        query += ' AND task_status IS NULL';
+      } else {
+        query += ' AND task_status = ?';
+        values.push(status);
+      }
+    }
+  
+    db.query(query, values, (err, results) => {
       if (err) return res.status(500).send(err);
       const formattedResults = results.map(task => {
-        const date = DateTime.fromJSDate(task.deadline, { zone: 'Europe/Warsaw' });
-=======
-    
-    db.query(query, [userId], (err, results) => {
-      if (err) return res.status(500).send(err);
-      const formattedResults = results.map(task => {
-        const date = DateTime.fromJSDate(task.deadline, { zone: 'utc+1' });
->>>>>>> 32c42e4e0bdd3e09d36f595666bcf50d477a7f2a
+        const date = task.deadline
+          ? DateTime.fromJSDate(task.deadline, { zone: 'Europe/Warsaw' }).toISODate()
+          : null;
         return {
           ...task,
-          deadline: date.toISODate(),
-    };
-    });
-      
+          deadline: date,
+          username: task.username
+        };
+      });
       res.send(formattedResults);
     });
-  });
+  });  
+  
 // zbieranie wszystkich taskow do kalendarza
 app.get('/all-tasks', (req, res) => {
   const query = `
@@ -201,16 +208,9 @@ app.get('/all-tasks', (req, res) => {
 
   db.query(query, (err, results) => {
     if (err) return res.status(500).send(err);
-<<<<<<< HEAD
     const formattedResults = results.map(task => {
       const date = task.deadline
         ? DateTime.fromJSDate(task.deadline, { zone: 'Europe/Warsaw' }).toISODate()
-=======
-    console.log('Results:', results); 
-    const formattedResults = results.map(task => {
-      const date = task.deadline
-        ? DateTime.fromJSDate(task.deadline, { zone: 'utc+1' }).toISODate()
->>>>>>> 32c42e4e0bdd3e09d36f595666bcf50d477a7f2a
         : null;
       return {
         ...task,

@@ -11,11 +11,7 @@ import { Router } from '@angular/router';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
-<<<<<<< HEAD
   
-=======
-
->>>>>>> 32c42e4e0bdd3e09d36f595666bcf50d477a7f2a
   username: string = '';
   constructor(private router: Router) {
     const userData = localStorage.getItem('user');
@@ -24,10 +20,6 @@ export class SidebarComponent {
       this.username = user.login;
     }
   }
-<<<<<<< HEAD
-=======
-  
->>>>>>> 32c42e4e0bdd3e09d36f595666bcf50d477a7f2a
 //sprawdzanie zalogowania
   isLoggedIn(): boolean {
     return !!localStorage.getItem('user');

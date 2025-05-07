@@ -13,6 +13,15 @@
     </form>
   
     <h3>Lista zadań...</h3>
+    <h4>Filtruj według statusu: </h4>
+    <select [(ngModel)]="selectedStatus" (change)="applyFilter()" name="status1">
+      <option value="ALL">Wszystkie</option>
+      <option value="Bardzo ważne">Bardzo ważne</option>
+      <option value="Ważne">Ważne</option>
+      <option value="Nieważne">Nieważne</option>
+      <option value="Luźne">Luźne</option>
+      <option value="NULL">Bez statusu</option>
+    </select>
     <ul>
       <li *ngFor="let task of tasks">
         <div>
