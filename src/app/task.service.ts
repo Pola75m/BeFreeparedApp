@@ -3,7 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Task {
+<<<<<<< HEAD
   username: any;
+=======
+  username: string;
+>>>>>>> 32c42e4e0bdd3e09d36f595666bcf50d477a7f2a
   id: string,
   task_name: string;
   task_status: string;

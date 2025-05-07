@@ -18,6 +18,10 @@
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
     "angular-calendar": "^0.31.1",
+<<<<<<< HEAD
+=======
+    "luxon": "^3.6.1",
+>>>>>>> 32c42e4e0bdd3e09d36f595666bcf50d477a7f2a
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

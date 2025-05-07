@@ -12,10 +12,14 @@ import { DateTime } from 'luxon';
 })
 export class MyListComponent implements OnInit {
   tasks: Task[] = [];
+<<<<<<< HEAD
   newTask: Task = {
     id: '', task_name: '', task_status: '', deadline: '', userId: '',
     username: undefined
   };
+=======
+  newTask: Task = {id: '', task_name: '', task_status: '', deadline: '', userId: '', username:'' };
+>>>>>>> 32c42e4e0bdd3e09d36f595666bcf50d477a7f2a
   userId: string ='';
   editingTask: Task | null = null;
 
@@ -37,6 +41,7 @@ export class MyListComponent implements OnInit {
     }
     return result;
   }
+<<<<<<< HEAD
   
   // formatowanie daty
   formatDate(dateString: string): string {
@@ -44,6 +49,8 @@ export class MyListComponent implements OnInit {
     //const date = new Date(dateString);
     return DateTime.fromISO(dateString, { zone: 'utc' }).startOf('day').toFormat('yyyy-MM-dd');
   }
+=======
+>>>>>>> 32c42e4e0bdd3e09d36f595666bcf50d477a7f2a
 
   // pokazywanie istniejacych zadan
   ngOnInit() {
@@ -63,6 +70,7 @@ export class MyListComponent implements OnInit {
     this.taskService.addTask(this.newTask).subscribe((task) => {
       if (task.deadline === '-' || task.deadline === null) {
         task.deadline = null;
+<<<<<<< HEAD
       } else {
         task.deadline = this.formatDate(task.deadline);
       }
@@ -70,6 +78,12 @@ export class MyListComponent implements OnInit {
       this.newTask = { id: '', task_name: '', task_status: '', deadline: '', userId: '', username: undefined };
       // w takiej kolejnosci jak w bazie danych ^
     });
+=======
+      this.tasks.push(task);
+      this.newTask = { id: '', task_name: '', task_status: '', deadline: '', userId: '', username:'' };
+      // w takiej kolejnosci jak w bazie danych ^
+    }});
+>>>>>>> 32c42e4e0bdd3e09d36f595666bcf50d477a7f2a
   }
 
   // edytowanie zadan
@@ -128,7 +142,10 @@ export class MyListComponent implements OnInit {
       this.tasks = tasks
       .map(task => ({
         ...task,
+<<<<<<< HEAD
         deadline: task.deadline === null || task.deadline === '-' ? '-' : this.formatDate(task.deadline)
+=======
+>>>>>>> 32c42e4e0bdd3e09d36f595666bcf50d477a7f2a
       }))
     });
   }
