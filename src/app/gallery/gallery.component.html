@@ -20,10 +20,10 @@
   <button type="submit">Wyślij</button>
 </form>
 
-<div *ngIf="images.length > 0; else brakZdjec">
+<div *ngIf="gallery.length > 0; else brakZdjec">
   <h3>Twoje zdjęcia:</h3>
   <div style="display: flex; flex-wrap: wrap; gap: 10px">
-    <div *ngFor="let img of images" style="width: 150px">
+    <div *ngFor="let img of gallery" style="width: 150px">
       <img [src]="img.url" alt="{{ img.fileName }}" width="100%" />
     </div>
   </div>

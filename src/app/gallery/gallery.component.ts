@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GalleryService } from '../gallery.service';
+import { GalleryImage, GalleryService } from '../services/gallery.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -10,23 +10,25 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './gallery.component.html'
 })
 export class GalleryComponent implements OnInit {
+  gallery: GalleryImage[] = [];
+  userId: any;
   selectedFile: File | null = null;
-  images: any[] = [];
-  userId: number | null = null;
 
   constructor(private galleryService: GalleryService) {}
 
   ngOnInit(): void {
-    const user = JSON.parse(localStorage.getItem('user') || '{}');
-    this.userId = user.Uid;
-
-    if (this.userId) {
+      const user = JSON.parse(localStorage.getItem('user') || '{}');
+      this.userId = user.Uid;
       this.loadGallery();
-    } else {
-      console.error('User not logged in or Uid missing');
+  } 
+
+  loadGallery(): void {
+    if (this.userId !== null) {
+      this.galleryService.getGallery(this.userId).subscribe((data) => {
+        this.gallery = data;
+      });
     }
   }
-
   onFileSelected(event: any): void {
     this.selectedFile = event.target.files[0];
   }
@@ -40,14 +42,14 @@ export class GalleryComponent implements OnInit {
         this.selectedFile = null;
       });
     } else {
-      alert('Nie wybrano pliku lub użytkownik niezalogowany.');
+      alert('Nie wybrano pliku do dodania.');
     }
   }
-
-  loadGallery(): void {
-    if (this.userId !== null) {
-      this.galleryService.getGallery(this.userId).subscribe((data) => {
-        this.images = data;
+  deleteImage(fileId: number): void {
+    if (confirm("Czy na pewno chcesz usunąć ten plik?")) {
+      this.galleryService.deleteImage(this.userId, fileId).subscribe({
+        next: () => this.loadGallery(),
+        error: (err) => console.error('Error: Nie udało się usunąć pliku', err)
       });
     }
   }

@@ -65,9 +65,9 @@ npm init -y npm i express multer mysql2 cors npm i
 DATABASE:
 CREATE DATABASE befreepareddb;
 
-CREATE TABLE images (
-id INT AUTO_INCREMENT PRIMARY KEY,
-user_id INT,
+CREATE TABLE files (
+fileId INT AUTO_INCREMENT PRIMARY KEY,
+userId INT,
 file_name VARCHAR(255),
 file_path VARCHAR(255),
 uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

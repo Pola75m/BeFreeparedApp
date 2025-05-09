@@ -13,7 +13,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',       // root jest tymczasowy
     password: '',       
-    database: 'zadania' 
+    database: 'befreepareddb' 
   });
 
 //łączenie się z bazą danych 

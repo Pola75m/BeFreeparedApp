@@ -1,2 +1,6 @@
-<p>communitygallery works!</p>
-<p>WELCOME TO COMMUNITY GALLERY!</p>
+<div class="gallery-container">
+  <div *ngFor="let image of gallery" class="gallery-item">
+    <img [src]="image.url" [alt]="image.fileName" />
+    <p>User ID: {{ image.username }}</p>
+  </div>
+</div>

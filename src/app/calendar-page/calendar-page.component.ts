@@ -3,7 +3,7 @@ import { DateTime, Info } from 'luxon';
 import { CommonModule } from '@angular/common';
 import { CalendarComponent } from "../calendar/calendar.component";
 import { Meetings } from '../calendar/meetings.interface';
-import { TaskService, Task } from '../task.service';
+import { TaskService, Task } from '../services/task.service';
 
 
 @Component({

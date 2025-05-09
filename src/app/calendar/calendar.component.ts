@@ -11,7 +11,7 @@ import {
 import { DateTime, Info } from 'luxon';
 import { CommonModule } from '@angular/common';
 import { Meetings } from './meetings.interface';
-import { TaskService } from '../task.service';
+import { TaskService } from '../services/task.service';
 
 @Component({
   selector: 'calendar',

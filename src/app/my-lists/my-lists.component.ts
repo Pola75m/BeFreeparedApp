@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TaskService, Task } from '../task.service';
+import { TaskService, Task } from '../services/task.service';
 import { DateTime } from 'luxon';
 
 @Component({
