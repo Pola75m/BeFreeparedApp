@@ -12,7 +12,9 @@
     <li class="dropdown-nav" routerLinkActive="active, dropdown-active">
       <a class="dropdown-btn">Kalendarz</a>
       <div class="dropdown-content">
-        <a routerLink="/my-calendar-page" routerLinkActive="active">Mój Kalendarz</a>
+        <a routerLink="/my-calendar-page" routerLinkActive="active"
+          >Mój Kalendarz</a
+        >
         <a routerLink="/calendar-page" routerLinkActive="active">Społeczność</a>
       </div>
     </li>
@@ -28,14 +30,19 @@
     <li>
       <a routerLink="/editing" routerLinkActive="active">Ustawienia</a>
     </li>
-    <li>
-      <h3 class="hello">Cześć!</h3>
-    </li>
   </ul>
   <div class="navbar-actions">
-    <button *ngIf="!isLoggedIn()" class="btn-nav" routerLink="/login">Zaloguj się</button>
-    <button *ngIf="!isLoggedIn()" class="btn-nav" routerLink="/sign-in">Zarejestruj się</button>
-    <button *ngIf="isLoggedIn()" class="btn-nav" (click)="logout()">Wyloguj</button>
+    <h3 class="hello" *ngIf="isLoggedIn()">Cześć {{ username }}!</h3>
+
+    <button *ngIf="!isLoggedIn()" class="btn-nav" routerLink="/login">
+      Zaloguj się
+    </button>
+    <button *ngIf="!isLoggedIn()" class="btn-nav" routerLink="/sign-in">
+      Zarejestruj się
+    </button>
+    <button *ngIf="isLoggedIn()" class="btn-nav" (click)="logout()">
+      Wyloguj
+    </button>
   </div>
 </nav>
 

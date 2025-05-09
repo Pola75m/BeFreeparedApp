@@ -21,12 +21,19 @@ h2 {
   font-weight: 500;
   color: #9c8792;
 }
-
+h3{
+  justify-items: left;
+  font-weight: 500;
+  color: #9c8792;
+}
 h6 {
   font-weight: 230;
   line-height: 32px;
 }
-
+p{
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
 .flex-item-right {
   text-align: left;
   flex: 40%;

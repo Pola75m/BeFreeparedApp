@@ -1,19 +1,37 @@
 <div class="flex-container">
   <div class="flex-item-left">
-    <h2>
-      Organizuj swoją pracę i życie codzienne w miejscu przyjaznym wszystkim!
-    </h2>
-    <br />
-    <h6>
-      Skorzystaj z naszej aplikacji i zapomnij o prokrastynacji dzięki
-      najprzyjaźniejszej użytkownikowi aplikacji organizacyjnej.
-    </h6>
-    <br />
-    <button class="btn-home" [routerLink]="['/sign-in']">Dołącz za darmo</button>
-    <p class="ad-text">
-      Przyłącz się do naszych zadowolonych użytkowników i poznaj magię
-      organizacji
-    </p>
+    <div *ngIf="!isLoggedIn()">
+      <h2>
+        Organizuj swoją pracę i życie codzienne w miejscu przyjaznym wszystkim!
+      </h2>
+      <br />
+      <h6>
+        Skorzystaj z naszej aplikacji i zapomnij o prokrastynacji dzięki
+        najprzyjaźniejszej użytkownikowi aplikacji organizacyjnej.
+      </h6>
+      <br />
+      <button class="btn-home" [routerLink]="['/sign-in']">
+        Dołącz za darmo
+      </button>
+      <p class="ad-text">
+        Przyłącz się do naszych zadowolonych użytkowników i poznaj magię
+        organizacji
+      </p>
+    </div>
+    <div *ngIf="isLoggedIn()">
+      <h2>
+        Dziękujemy za korzystanie z naszej aplikacji.
+        <br />Życzymy Ci dobrej pracy i swobodnych dni.
+      </h2>
+      <h6 style="margin-top: 15px">
+        Rozpocznij z nami swój {{ dayOfWeek }} :D <br />
+      </h6>
+      <p class="ad-text">Zaczynamy!</p>
+
+      <button class="btn-home" [routerLink]="['/my-lists']">
+        Przejdź do swojej listy
+      </button>
+    </div>
   </div>
   <div class="flex-item-right">
     <img
