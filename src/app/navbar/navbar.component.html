@@ -33,7 +33,6 @@
   </ul>
   <div class="navbar-actions">
     <h3 class="hello" *ngIf="isLoggedIn()">Cześć {{ username }}!</h3>
-
     <button *ngIf="!isLoggedIn()" class="btn-nav" routerLink="/login">
       Zaloguj się
     </button>

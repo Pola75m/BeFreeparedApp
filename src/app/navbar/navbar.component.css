@@ -111,7 +111,7 @@ li > a:hover, .dropdown-content a:hover {
   right: 0;
   justify-items: center;
   align-items: center;
-  display: inline-block;
+  display: inline;
   width: auto;
   margin-right: 20px;
 }
@@ -136,6 +136,14 @@ li > a:hover, .dropdown-content a:hover {
 }
 
 .hello{
+  text-align: center;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+margin: 5px;
+  padding: 10px;
+  font-weight: lighter;
+  display: inline;
   text-shadow: #896d85;
   color:#6b5568;
 }

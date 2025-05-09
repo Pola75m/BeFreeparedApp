@@ -1,0 +1,31 @@
+* {
+  background-image: url('/public/assets/background.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+body{
+position: absolute;
+width: 834px;
+height: 904px;
+left: 303px;
+top: 20px;
+}
+/* Rectangle 1 */
+.join{
+position:fixed;
+display: flexbox;
+align-items: center;
+justify-self: center;
+width: 750px;
+height:80%;
+
+/*left: calc(50% - 600px/2 + 5px);
+top: calc(50% - 800px/2 - 3px);
+*/
+
+background: #1E1E1E;
+box-shadow: 4px 4px 14.8px 6px #3C3232;
+border-radius: 35px;
+}
