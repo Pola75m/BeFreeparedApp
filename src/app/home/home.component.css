@@ -49,8 +49,7 @@ p{
   height: auto;
   flex-direction: row;
   text-align: center;
-  justify-content: center;
-    
+  justify-content: center; 
 }
 .flex-item-left>.title-under{
     font-size: 35px;
@@ -67,19 +66,17 @@ p{
   background: linear-gradient(
     268.96deg,
     #6b5568 -7.34%,
-    #a86367 34.56%,
+    #a86367 3.56%,
     #847382 107.34%
   );
-  border: 3px solid #6b5568b0;
+  border: 3px solid #664e5cd3;
   box-shadow: 1px 6px #664e5cd3;
   border-radius: 8px;
 }
-
 .btn-home:hover {
   box-shadow: 0 5px #5a4150d3;
   transform: translateY(2px);
 }
-
 .btn-home:active {
   box-shadow: 0 0px 0px #5a4150d3;
   transform: translateY(5px);
@@ -118,8 +115,38 @@ p{
 .footer-text {
   margin-top: 20px;
 }
+.border-pic{
+   border: 5px solid #0000;
+  border-radius: 10px;
+   background: linear-gradient(#131219, #131219) padding-box, linear-gradient(
+        var(--angle),
+        #6b5568 7.34%,
+    #a86367 34.56%,
+    #847382 107.34%
+      ) border-box;
+  animation: 5s rotate linear infinite;
+}
 .animol{
+   border: 10px solid #0000;
   border-radius: 380px;
+    background: linear-gradient(#131219, #131219) padding-box, linear-gradient(
+        var(--angle),
+        #6b5568 7.34%,
+    #a86367 34.56%,
+    #847382 107.34%
+      ) border-box;
+  animation: 5s rotate linear infinite;
+}
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
 img{
   border-radius: 10px;

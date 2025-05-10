@@ -1,33 +1,34 @@
-<h2>Login</h2>
-<form (ngSubmit)="loginUser()">
-  <input
-    type="text"
-    placeholder="Login"
-    [(ngModel)]="login"
-    name="login"
-    required
-  />
-  <input
-    type="password"
-    placeholder="Password"
-    [(ngModel)]="password"
-    name="password"
-    required
-  />
-  <button type="submit">Zaloguj</button>
-</form>
-<p>
-  Nie masz konta?
-  <button
-    (click)="goToSignUp()"
-    style="
-      background: none;
-      border: none;
-      color: blue;
-      text-decoration: underline;
-      cursor: pointer;
-    "
-  >
-    Zarejestruj się!
-  </button>
-</p>
+<div class="bg-image"></div>
+<div class="all-box">
+  <h2>
+    Witaj ponownie<br />
+    Cieszymy się, że jesteś z nami!
+  </h2>
+  <p>
+    Przeglądaj <span>pliki</span> i pamiętaj o swoich <span>deadline'ach!</span>
+  </p>
+  <form #form="ngForm" (ngSubmit)="loginUser()">
+    <div class="inputs">
+      <input
+        type="text"
+        placeholder="Login"
+        name="login"
+        [(ngModel)]="login"
+        [required]="login"
+      />
+      <input
+        type="password"
+        placeholder="Hasło"
+        name="password"
+        [(ngModel)]="password"
+        [required]="password"
+      />
+
+      <button type="submit">Zaloguj się</button>
+    </div>
+  </form>
+  <p>
+    Chcesz do nas dołączyć?
+    <a class="btn-add" (click)="goToSignUp()">Zarejestruj się</a>
+  </p>
+</div>

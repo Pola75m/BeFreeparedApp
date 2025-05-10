@@ -7,7 +7,8 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-gallery',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './gallery.component.html'
+  templateUrl: './gallery.component.html',
+  styleUrl: './gallery.component.css'
 })
 export class GalleryComponent implements OnInit {
   gallery: GalleryImage[] = [];
@@ -53,4 +54,8 @@ export class GalleryComponent implements OnInit {
       });
     }
   }
+  handleClickAndUpload(event: Event): void {
+  this.onFileSelected(event);
+  this.uploadImage(new Event('submit'));
+}
 }

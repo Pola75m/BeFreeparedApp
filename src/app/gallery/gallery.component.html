@@ -1,34 +1,39 @@
-<!--<button type="button" class="btn-upload" (click)="fileInput.click()">
-  <span>Dodaj plik</span>
-  <input #fileInput type="file" (change)="onFileInput($event)" )>
-</button>
+<button class="btnn-upload"><span>Dodaj plik</span></button>
 <div class="container">
   <div class="header">
-    <h2>
-      Witaj w Galerii!
-    </h2>
+    <h2>Galeria użytkownika</h2>
   </div>
   <div class="content">
+    <div class="btnn-upload" (click)="fileInput.click()">
+      <ng-container *ngIf="!selectedFile">
+        <span>Dodaj plik</span>
+      </ng-container>
 
-  </div>
-</div>
--->
-<h2>Galeria użytkownika</h2>
+      <ng-container *ngIf="selectedFile">
+        <span>Wysyłanie...</span>
+      </ng-container>
 
-<form (submit)="uploadImage($event)">
-  <input type="file" (change)="onFileSelected($event)" required />
-  <button type="submit">Wyślij</button>
-</form>
-
-<div *ngIf="gallery.length > 0; else brakZdjec">
-  <h3>Twoje zdjęcia:</h3>
-  <div style="display: flex; flex-wrap: wrap; gap: 10px">
-    <div *ngFor="let img of gallery" style="width: 150px">
-      <img [src]="img.url" alt="{{ img.fileName }}" width="100%" />
+      <input
+        #fileInput
+        type="file"
+        hidden
+        accept="image/*"
+        (change)="handleClickAndUpload($event)"
+      />
     </div>
+
+    <div *ngIf="gallery.length > 0; else brakZdjec">
+      <h3>Twoje zdjęcia:</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px">
+        <div *ngFor="let img of gallery" style="width: 150px">
+          <img [src]="img.url" alt="{{ img.fileName }}" width="100%" />
+          <button class="delete-btn" (click)="deleteImage(img.id)">Usuń</button>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #brakZdjec>
+      <p>Brak zdjęć w galerii.</p>
+    </ng-template>
   </div>
 </div>
-
-<ng-template #brakZdjec>
-  <p>Brak zdjęć w galerii.</p>
-</ng-template>

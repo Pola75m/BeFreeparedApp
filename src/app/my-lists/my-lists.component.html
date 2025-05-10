@@ -1,47 +1,85 @@
 <div class="todo-container">
-    <h2>Twoja To-do list</h2>
+  <h2>To-Do list</h2>
+  <div class="form-style">
     <form (ngSubmit)="addTask()">
-      <input [(ngModel)]="newTask.task_name" name="title" placeholder="Task Title" required />
-      <select [(ngModel)]="newTask.task_status" name="status" placeholder="optional">
+      <input
+        [(ngModel)]="newTask.task_name"
+        name="title"
+        placeholder="Task Title"
+        required
+      />
+      <select
+        [(ngModel)]="newTask.task_status"
+        name="status"
+        placeholder="optional"
+      >
+        <option value="NULL">Bez statusu</option>
         <option value="Bardzo ważne">Bardzo ważne</option>
         <option value="Ważne">Ważne</option>
         <option value="Nieważne">Nieważne</option>
         <option value="Luźne">Luźne</option>
       </select>
-      <input [(ngModel)]="newTask.deadline" name="date" type="date" placeholder="yyyy.mm.dd" />
+      <input
+        [(ngModel)]="newTask.deadline"
+        name="date"
+        type="date"
+        placeholder="yyyy.mm.dd"
+      />
       <button type="submit">Dodaj zadanie</button>
     </form>
-  
-    <h3>Lista zadań...</h3>
-    <h4>Filtruj według statusu: </h4>
-    <select [(ngModel)]="selectedStatus" (change)="applyFilter()" name="status1">
+  </div>
+
+  <div class="form-style">
+    <h2>Twoja lista zadań</h2>
+    <h4>Filtruj według statusu:</h4>
+    <select
+      class="filter"
+      [(ngModel)]="selectedStatus"
+      (change)="applyFilter()"
+      name="status1"
+    >
       <option value="ALL">Wszystkie</option>
+      <option value="NULL">Bez statusu</option>
       <option value="Bardzo ważne">Bardzo ważne</option>
       <option value="Ważne">Ważne</option>
       <option value="Nieważne">Nieważne</option>
       <option value="Luźne">Luźne</option>
-      <option value="NULL">Bez statusu</option>
     </select>
-    <ul>
-      <li *ngFor="let task of tasks">
-        <div>
-          {{ task.task_name }} - {{ task.task_status }} - {{ task.deadline }}
-          <button (click)="startEdit(task)">Edytuj</button>
-          <button (click)="deleteTask(task.id)">Usuń</button>
-        </div>
-        <div *ngIf="editingTask && editingTask.id === task.id">
-          <input [(ngModel)]="editingTask.task_name" placeholder="Task Title" />
-          <select [(ngModel)]="editingTask.task_status">
-            <option value="Bardzo ważne">Bardzo ważne</option>
-            <option value="Ważne">Ważne</option>
-            <option value="Nieważne">Nieważne</option>
-            <option value="Luźne">Luźne</option>
-          </select>
-          <input [(ngModel)]="editingTask.deadline" type="date" />
-          <button (click)="saveEdit()">Zapisz</button>
-          <button (click)="cancelEdit()">Anuluj</button>
-        </div>
-      </li>
-    </ul>
   </div>
-  
+  <table>
+    <div>
+      <tr *ngFor="let task of tasks">
+        <td>
+          <div>
+            <p>
+              {{ task.task_name }} {{ task.task_status }} {{ task.deadline }}
+            </p>
+            <button (click)="startEdit(task)">Edytuj</button>
+            <button (click)="deleteTask(task.id)">Usuń</button>
+          </div>
+          <div *ngIf="editingTask && editingTask.id === task.id">
+            <input
+              class="inputs"
+              [(ngModel)]="editingTask.task_name"
+              placeholder="Task Title"
+            />
+            <select [(ngModel)]="editingTask.task_status">
+              <option value="Bardzo ważne">Bardzo ważne</option>
+              <option value="Ważne">Ważne</option>
+              <option value="Nieważne">Nieważne</option>
+              <option value="Luźne">Luźne</option>
+              <option value="NULL">Bez statusu</option>
+            </select>
+            <input
+              class="inputs"
+              [(ngModel)]="editingTask.deadline"
+              type="date"
+            />
+            <button (click)="saveEdit()">Zapisz</button>
+            <button (click)="cancelEdit()">Anuluj</button>
+          </div>
+        </td>
+      </tr>
+    </div>
+  </table>
+</div>

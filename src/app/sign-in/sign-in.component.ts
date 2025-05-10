@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in',
@@ -17,19 +17,22 @@ export class SignInComponent {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  register() {
+  register(form:NgForm) {
+    if(!form.valid){
+      return alert('Musisz wpisać login i hasło');
+    }
     this.http.post('http://localhost:3000/register', { login: this.login, password: this.password })
       .subscribe({
         next: (res) => {
-          alert('Registered successfully!'),
+          alert('Zarejestrowano'),
           this.router.navigate(['/login']);
         },
         error: (err) => {
           if (err.status === 409) {
-          alert('User login already exists.');
+          alert('Login już istnieje');
         } else {
-          alert('Registration failed.')
-        }}
+          alert('Nie udało się zarejestrować')
+        }}       
       });
   }
   goToLogin() {

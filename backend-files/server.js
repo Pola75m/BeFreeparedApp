@@ -58,15 +58,21 @@ app.get('/gallery/:userId', async (req, res) => {
 
   res.json(gallery);
 });
-app.delete('/gallery/:userId/:fileId', async (req,res) => {
+app.delete('/gallery/:userId/:fileId', async (req, res) => {
   const userId = req.params.userId;
   const fileId = req.params.fileId;
-  const [] = await pool.query(
-      'DELETE * FROM files WHERE fileId = ? AND userId = ?',
-      [fileId,userId]
-  );
 
-  res.json({success: true});
+  try {
+    await pool.query(
+      'DELETE FROM files WHERE fileId = ? AND userId = ?',
+      [fileId, userId]
+    );
+
+    res.json({ success: true });
+  } catch (err) {
+    console.error('SQL delete error:', err);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 app.get('/gallery', async (req, res) => {

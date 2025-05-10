@@ -9,6 +9,7 @@ import { DateTime } from 'luxon';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: 'my-lists.component.html',
+  styleUrl: './my-lists.component.css'
 })
 export class MyListComponent implements OnInit {
   tasks: Task[] = [];

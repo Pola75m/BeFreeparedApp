@@ -1,31 +1,83 @@
 * {
-  background-image: url('/public/assets/background.png');
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.bg-image{
+  height: 92vh;
+  filter: blur(15px);
+  -webkit-filter: blur(15px);
+  background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.2)), url('../../../public/assets/background.png');
+  background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-size: cover;
   background-size: 100% 100%;
+  background-color: rgba(0, 0, 0, 0.74);
 }
-
-body{
-position: absolute;
-width: 834px;
-height: 904px;
-left: 303px;
-top: 20px;
-}
-/* Rectangle 1 */
-.join{
-position:fixed;
-display: flexbox;
-align-items: center;
+.all-box{
 justify-self: center;
-width: 750px;
-height:80%;
-
-/*left: calc(50% - 600px/2 + 5px);
-top: calc(50% - 800px/2 - 3px);
-*/
-
+height:auto;
+transform: translate(-50%, -50%);
+background-color: rgb(0, 0, 1); /* Fallback color */
+background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
 background: #1E1E1E;
-box-shadow: 4px 4px 14.8px 6px #3C3232;
+box-shadow: 4px 4px 14.8px 6px #3c323263;
 border-radius: 35px;
+position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 40%;
+  padding: 80px 60px;
+  padding-bottom: 90px;
+  text-align: center;
+}
+.all-box>h2{
+font-size: 45px;
+margin-bottom: 10px;
+font-weight: 500;
+align-items: center;
+text-align: center;
+color: #927383;
+}
+
+input[type=text],input[type=password]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  background-color:#ada1a1a8;
+  border: 2px solid #847382ab;
+  color: #1E1E1E;
+ border-radius: 6px;
+  box-sizing: border-box;
+}
+button[type=submit] {
+  width: 100%;
+  background-color: #7c6479;
+  color: #1E1E1E;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+ border-radius: 6px;
+  cursor: pointer;
+}
+p{
+  font-size: 18px;
+  font-weight: 500;
+color: #927383;
+}
+span{
+  font-weight: 500;
+  font-size: 18px;
+  color: #6C4361;
+}
+.btn-add{
+  color: #6C4361;
+  font-weight: 600;
+  cursor: pointer;
+}
+.inputs{
+    margin: 36px;
 }
