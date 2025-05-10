@@ -21,8 +21,10 @@ export class NavbarComponent implements OnInit {
   
   ngOnInit(): void {
     this.userService.getUser().pipe(takeUntil(this.unsubscribe$)).subscribe(user =>{
+      //if aby nie wyrzucało error: user is null
+      if(user!== null)
       this.username = user.login;
-    })
+    });
   }
 //https://stackoverflow.com/questions/57355066/how-to-implement-behavior-subject-using-service-in-angular-8
 ngOnDestroy() {
@@ -36,8 +38,6 @@ ngOnDestroy() {
 //przycisk wylogowania
   logout() {
     localStorage.removeItem('user');
-    this.router.navigate(['/login']).then(() => {
-      window.location.reload();
-    });    
+    this.router.navigate(['/login']);    
   }
 }

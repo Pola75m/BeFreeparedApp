@@ -7,10 +7,10 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-editing',
   imports: [CommonModule, FormsModule],
-  templateUrl: './editing.component.html',
-  styleUrls: ['./editing.component.css']
+  templateUrl: './settings.component.html',
+  styleUrls: ['./settings.component.css']
 })
-export class EditingComponent {
+export class SettingsComponent {
   newLogin: string = '';
   newPassword: string = '';
   confirmPassword: string = '';
