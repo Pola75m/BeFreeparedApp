@@ -12,7 +12,7 @@ import { Router,RouterModule, Routes } from '@angular/router';
 export class HomeComponent {
 
   get dayOfWeek(): string{
-    const weekday = ["niedzielę","poniedziałek","wtorek","środę","czwartek","piątek","sobotę"];
+    const weekday = ["swoją niedzielę","swój poniedziałek","swój wtorek","swoją środę","swój czwartek","swój piątek","swoją sobotę"];
     const d = new Date();
     return weekday[d.getDay()];
   }
