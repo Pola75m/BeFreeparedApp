@@ -28,11 +28,19 @@ db.connect(err => {
 //logika backendowa rejestracji
 app.post('/register', (req, res) => {
   const { login, password } = req.body;
+  const checkQuery = `SELECT * FROM users WHERE login = ?`;
+  db.query(checkQuery, [login], (err, results) => {
+    if (err) return res.status(500).json({ message: 'Błąd bazy danych', error: err });
+    
+    if (results.length > 0) {
+      // Login already exists
+      return res.status(409).json({ message: 'User login already exists' });
+    }
   const query = `INSERT INTO users (login, password) VALUES (?, ?)`;
   db.query(query, [login, password], (err, result) => {
     if (err) return res.status(500).json({ message: 'Błąd rejestracji: ', error: err });
-    const userId = result.insertId;
     res.status(201).json({ message: 'Zarejestrowany user:', userId: result.insertId });
+  });
   });
 });
 

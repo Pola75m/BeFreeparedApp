@@ -24,7 +24,12 @@ export class SignInComponent {
           alert('Registered successfully!'),
           this.router.navigate(['/login']);
         },
-        error: (err) => alert('Registration failed.')
+        error: (err) => {
+          if (err.status === 409) {
+          alert('User login already exists.');
+        } else {
+          alert('Registration failed.')
+        }}
       });
   }
   goToLogin() {
