@@ -1,6 +1,6 @@
 <div class="gallery-container">
   <div *ngFor="let image of gallery" class="gallery-item">
     <img [src]="image.url" [alt]="image.fileName" />
-    <p>User ID: {{ image.username }}</p>
+    <p>Login: {{ image.username }}</p>
   </div>
 </div>
