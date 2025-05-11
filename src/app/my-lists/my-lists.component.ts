@@ -120,7 +120,6 @@ export class MyListComponent implements OnInit {
     }
     );
   }
-
   //szybki filtr
   applyFilter(){
     this.fetchTasks();

@@ -1,5 +1,5 @@
 .navbar {
-  height: 66px;
+  height: 70px;
   width: 100%;
   background: #1e1e1e;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -36,7 +36,7 @@
 }
 .navbar-links {
   list-style: none;
-  margin-left: 6px;
+  margin-left: 8px;
   padding: 0;
   display: flex;
   align-items: center;
@@ -45,29 +45,25 @@
   position: relative;
   display: inline-block;
   font-family: Tahoma, Verdana, sans-serif;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 300;
+  font-size: 18px;
   margin-left: 5px;
 }
 .navbar-links >li > a,
 .dropdown-btn {
   display: inline-block;
   padding: 14px 10px;
+  font-weight: 300;
+  font-size: 18px;
   text-decoration: none;
-  color: #7c6479;
+  color: #847382;
   text-align: center;
   cursor: pointer;
-}
-li.dropdown-nav.active-route,
-li.dropdown-nav.active-route > .dropdown-btn,
-.dropdown-content a.active-route,
-li > a.active-route {
-  color: #a86366d5 !important;
 }
 .navbar-links a:hover,
 .dropdown-content a:hover,
 .dropdown-btn:hover {
-  color: #847382 !important;
+  color: #c4b5b5c4 !important;
 }
 .dropdown-nav {
   position: relative;
@@ -84,7 +80,7 @@ li > a.active-route {
   display: block;
 }
 .dropdown-content a {
-  color: #7c6479;
+  color: #847382;
   padding: 10px;
   text-decoration: none;
   display: block;
@@ -99,12 +95,12 @@ li > a.active-route {
   margin-right: 25px;
 }
 .btn-nav {
-  background: #896d85;
-  color: #1e1e1e;
+ background: #4b3a48;
+  color: #c4b5b5c4;
   border: none;
   font-family: Tahoma, Verdana, sans-serif;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 16px;
   border-radius: 6px;
   margin: 5px;
   padding: 10px;
@@ -123,7 +119,7 @@ li > a.active-route {
   margin: 5px;
   padding: 10px;
   font-weight: lighter;
-  color: #6b5568;
+  color: #847382;
   display: inline;
 }
 @media screen and (max-width: 768px) {

@@ -4,12 +4,10 @@
       <h2>
         Organizuj swoją pracę i życie codzienne w miejscu przyjaznym wszystkim!
       </h2>
-      <br />
       <h6>
         Skorzystaj z naszej aplikacji i zapomnij o prokrastynacji dzięki
         najprzyjaźniejszej użytkownikowi aplikacji organizacyjnej.
       </h6>
-      <br />
       <button class="btn-home" [routerLink]="['/sign-in']">
         Dołącz za darmo
       </button>
@@ -20,14 +18,11 @@
     </div>
     <div *ngIf="isLoggedIn()">
       <h2>
-        Dziękujemy za korzystanie z naszej aplikacji.
-        <br />Życzymy Ci dobrej pracy i swobodnych dni.
+        Dziękujemy za korzystanie z naszej aplikacji. <br />Życzymy Ci dobrej
+        pracy i swobodnych dni.
       </h2>
-      <h6 style="margin-top: 15px">
-        Rozpocznij z nami {{ dayOfWeek }} :D <br />
-      </h6>
+      <h6>Rozpocznij z nami {{ dayOfWeek }} :D</h6>
       <p class="ad-text">Zaczynamy!</p>
-
       <button class="btn-home" [routerLink]="['/my-lists']">
         Przejdź do swojej listy
       </button>
@@ -42,14 +37,15 @@
     />
   </div>
 </div>
+
 <div class="flex-item-down">
   <img src="assets/stars.png" alt="crying spiderman" width="500px" />
 </div>
+
 <div class="flex-container">
   <div class="flex-item-left">
     <p class="ad-text">Organizuj jak chcesz</p>
     <h2 class="title-under">Produktywność przede wszystkim</h2>
-    <br />
     <h6>
       Kontroluj swoje plany za pomocą naszego kalendarza. Utwórz deadline
       zgodnie z tym czego potrzebujesz - pilność, data czy też ich brak. Dzięki
@@ -65,16 +61,16 @@
     />
   </div>
 </div>
+
 <div class="flex-container">
   <div class="flex-item-left">
     <p class="ad-text">Archiwum twoich potrzeb</p>
     <h2 class="title-under">Organizuj - Archiwizuj</h2>
-    <br />
     <h6>
       Po najważniejsze dzieła sztuki po zwykłe pamiątki rodzinne. W Twojej
       galerii wybór jest Twój. Zapisuj w niej co uważasz za konieczne. Możesz
       też podzielić się swoją twórczością z innymi użytkownikami - lecz także
-      zachować ją tylko dla Twóch oczu
+      zachować ją tylko dla Twój oczu
     </h6>
   </div>
   <div class="flex-item-right">

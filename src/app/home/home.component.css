@@ -19,20 +19,22 @@
 }
 h2 {
   font-weight: 500;
-  color: #9c8792;
+  color: #c4b5b5c4;
 }
 h3{
   justify-items: left;
   font-weight: 500;
-  color: #9c8792;
+  color: #c4b5b5c4;
 }
 h6 {
   font-weight: 230;
   line-height: 32px;
+    color: #c4b5b5c4;
 }
 p{
   margin-top: 5px;
   margin-bottom: 10px;
+  color: #c4b5b5c4;
 }
 .flex-item-right {
   text-align: left;
@@ -56,30 +58,27 @@ p{
 }
 .btn-home {
   color: #1e1e1e;
-  font-family: Tahoma, Verdana, sans-serif;
   font-weight: 500;
-  font-size: 17px;
-  display: inline;
-  width: auto;
-  padding: 10px;
+  font-size: 18px;
+  padding: 12px 25px;
   cursor: pointer;
-  background: linear-gradient(
-    268.96deg,
-    #6b5568 -7.34%,
-    #a86367 3.56%,
-    #847382 107.34%
-  );
-  border: 3px solid #664e5cd3;
-  box-shadow: 1px 6px #664e5cd3;
+  background: linear-gradient(268.96deg, #6b5568 -7.34%, #a86367 3.56%, #847382 107.34%);
+  border: none;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+  transition: all 0.3s ease;
+  width: auto;
 }
+
 .btn-home:hover {
-  box-shadow: 0 5px #5a4150d3;
-  transform: translateY(2px);
+  background: linear-gradient(268.96deg, #a86367 -7.34%, #6b5568 3.56%, #847382 107.34%);
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
 }
+
 .btn-home:active {
-  box-shadow: 0 0px 0px #5a4150d3;
-  transform: translateY(5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(2px);
 }
 /* Responsive layout - makes a one column-layout instead of two-column layout */
 @media (max-width: 800px) {
@@ -102,7 +101,7 @@ p{
 }
 .footer {
   height: 20px;
-  color: #9c8792e3;
+  color: #c4b5b5c4;
   text-align: center;
   justify-items: center;
   margin-bottom: 80px;

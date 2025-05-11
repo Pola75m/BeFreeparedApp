@@ -3,63 +3,65 @@
   <div class="form-style">
     <form (ngSubmit)="addTask()">
       <input
+        class="task-bar"
         [(ngModel)]="newTask.task_name"
         name="title"
         placeholder="Task Title"
         required
       />
-      <select
-        [(ngModel)]="newTask.task_status"
-        name="status"
-        placeholder="optional"
-      >
-        <option value="NULL">Bez statusu</option>
-        <option value="Bardzo ważne">Bardzo ważne</option>
-        <option value="Ważne">Ważne</option>
-        <option value="Nieważne">Nieważne</option>
-        <option value="Luźne">Luźne</option>
-      </select>
-      <input
-        [(ngModel)]="newTask.deadline"
-        name="date"
-        type="date"
-        placeholder="yyyy.mm.dd"
-      />
+      <div class="row-inputs">
+        <input
+          [(ngModel)]="newTask.deadline"
+          name="date"
+          type="date"
+          placeholder="yyyy.mm.dd"
+        />
+        <select
+          [(ngModel)]="newTask.task_status"
+          name="status"
+          placeholder="optional"
+        >
+          <option value="NULL">Bez statusu</option>
+          <option value="Bardzo ważne">Bardzo ważne</option>
+          <option value="Ważne">Ważne</option>
+          <option value="Nieważne">Nieważne</option>
+          <option value="Luźne">Luźne</option>
+        </select>
+      </div>
       <button type="submit">Dodaj zadanie</button>
     </form>
   </div>
 
-  <div class="form-style">
-    <h2>Twoja lista zadań</h2>
-    <h4>Filtruj według statusu:</h4>
-    <select
-      class="filter"
-      [(ngModel)]="selectedStatus"
-      (change)="applyFilter()"
-      name="status1"
-    >
-      <option value="ALL">Wszystkie</option>
-      <option value="NULL">Bez statusu</option>
-      <option value="Bardzo ważne">Bardzo ważne</option>
-      <option value="Ważne">Ważne</option>
-      <option value="Nieważne">Nieważne</option>
-      <option value="Luźne">Luźne</option>
-    </select>
-  </div>
-  <table>
-    <div>
-      <tr *ngFor="let task of tasks">
-        <td>
-          <div>
-            <p>
-              {{ task.task_name }} {{ task.task_status }} {{ task.deadline }}
-            </p>
-            <button (click)="startEdit(task)">Edytuj</button>
-            <button (click)="deleteTask(task.id)">Usuń</button>
-          </div>
-          <div *ngIf="editingTask && editingTask.id === task.id">
+  <div class="toDoList">
+    <div class="filter-style">
+      <div class="filter-control">
+        <h4>Filtruj według statusu:</h4>
+        <select
+          class="filter"
+          [(ngModel)]="selectedStatus"
+          (change)="applyFilter()"
+          name="status1"
+        >
+          <option value="ALL">Wszystkie</option>
+          <option value="NULL">Bez statusu</option>
+          <option value="Bardzo ważne">Bardzo ważne</option>
+          <option value="Ważne">Ważne</option>
+          <option value="Nieważne">Nieważne</option>
+          <option value="Luźne">Luźne</option>
+        </select>
+      </div>
+    </div>
+
+    <ul *ngFor="let task of tasks">
+      <li>
+        <span>{{ task.task_name }}</span
+        ><span> {{ task.task_status }}</span>
+        <span>{{ task.deadline }}</span>
+        <button class="close-btn" (click)="deleteTask(task.id)">&times;</button>
+        <div *ngIf="editingTask && editingTask.id === task.id">
+          <div class="row-edits">
             <input
-              class="inputs"
+              class="task-edit"
               [(ngModel)]="editingTask.task_name"
               placeholder="Task Title"
             />
@@ -70,16 +72,15 @@
               <option value="Luźne">Luźne</option>
               <option value="NULL">Bez statusu</option>
             </select>
-            <input
-              class="inputs"
-              [(ngModel)]="editingTask.deadline"
-              type="date"
-            />
-            <button (click)="saveEdit()">Zapisz</button>
-            <button (click)="cancelEdit()">Anuluj</button>
+            <input [(ngModel)]="editingTask.deadline" type="date" />
+            <div class="edit-btn">
+              <button (click)="saveEdit()">Zapisz</button>
+              <button (click)="cancelEdit()">Anuluj</button>
+            </div>
           </div>
-        </td>
-      </tr>
-    </div>
-  </table>
+        </div>
+        <button (click)="startEdit(task)">Edytuj</button>
+      </li>
+    </ul>
+  </div>
 </div>
