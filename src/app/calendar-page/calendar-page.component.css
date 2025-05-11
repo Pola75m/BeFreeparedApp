@@ -1,3 +1,26 @@
-.hellos{
-    color: rgb(162, 188, 218) !important;
+.container{
+  justify-items: center;
+  margin: 10px;
+  padding-top: 20px;
+  padding-left:60px; ;
+  padding-right:60px;;
+  padding-bottom:40px; ;
+  width: auto;
+  height: 100%;
+  text-align: left;
+  margin-bottom: 20px;
+  color: #c4b5b5c4;
+}
+.container>h2{
+    color: #c4b5b5c4; justify-items: center;
+  margin: 10px;
+  padding-top: 20px;
+  padding-left:60px; ;
+  padding-right:60px;;
+  padding-bottom:40px; ;
+  width: auto;
+  height: 100%;
+  text-align: left;
+  margin-bottom: 20px;
+  color: #c4b5b5c4;
 }

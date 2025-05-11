@@ -24,7 +24,7 @@ export class CalendarPageComponent {
         if (!task.deadline) continue;
         const date = DateTime.fromISO(task.deadline).toISODate()!;
         if (!result[date]) result[date] = [];
-        result[date].push(task.task_name + ` (${task.username})`);
+        result[date].push("Zadanie użytkownika " + `${task.username}` +": \""+ task.task_name+"\" " );
       }
 
       this.allMeetings = result;
