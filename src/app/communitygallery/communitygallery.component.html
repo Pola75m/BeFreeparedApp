@@ -1,6 +1,23 @@
-<div class="gallery-container">
-  <div *ngFor="let image of gallery" class="gallery-item">
-    <img [src]="image.url" [alt]="image.fileName" />
-    <p>Użytkownik: {{ image.username }}</p>
+<div class="box">
+  <div class="header">
+    <h2>Galeria użytkownika</h2>
+    <div *ngIf="gallery.length > 0; else noFiles">
+      <h3>Zdjęcia użytkowników:</h3>
+      <div class="gallery-container">
+        <div *ngFor="let image of gallery" class="gallery-item">
+          <img [src]="image.url" [alt]="image.fileName" />
+          <h4>Użytkownik: {{ image.username }}</h4>
+        </div>
+      </div>
+    </div>
+    <ng-template #noFiles>
+      <div class="empty">
+        <h3>
+          Brak zdjęć w galerii.
+          <br />
+          Dodawaj zdjęcia poprzez przycisk w dolnym rogu swojej galerii!
+        </h3>
+      </div>
+    </ng-template>
   </div>
 </div>
