@@ -20,11 +20,11 @@ body {
 
 h2 {
   margin-bottom: 20px;
-  color: #c4b5b5c4;
+  color: #aa9795;
 }
 
 h3, h4 {
-  color: #c4b5b5c4;
+  color: #aa9795;
 }
 
 .form-style {
@@ -65,7 +65,7 @@ input[type="date"],
   width: 100%;
   flex: 1 1 200px;
   padding: 10px;
-  background-color: #d6c9c99f;
+  background-color: #bdb0aece;
   border: 1px solid #3d363cab;
   border-radius: 6px;
   font-size: 15px;
@@ -73,8 +73,8 @@ input[type="date"],
 
 button,
 button[type="submit"] {
-  background: #4b3a48;
-  color: #c4b5b5c4;
+  background: #6b555d;
+  color: #bdb0aece;
   border: none;
   font-family: Tahoma, Verdana, sans-serif;
   font-weight: 500;
@@ -87,8 +87,8 @@ button[type="submit"] {
 }
 
 button:hover {
-  background: #847382;
-  color: #1e1e1e;
+  background: #645452;
+  color: #bdb0aece;
 }
 
 .toDoList {
@@ -108,7 +108,7 @@ li span {
 
 li {
   position: relative;
-  background-color: #c4b5b59f;
+  background-color: #bdb0aece;
   border: 1px solid #3d363cab;
   margin-bottom: 10px;
   padding: 15px;
@@ -126,15 +126,15 @@ li .close-btn {
   padding: 7px 10px;
   font-size: 20px;
   font-weight: bold;
-  background: #4b3a48;
-  color: #c2babac4;
+  background: #6b555d;
+  color: #bdb0aece;
   cursor: pointer;
   line-height: 1;
 }
 
 li button:hover {
-  background: #31262f;
-  color: #c4b5b59f;
+  background: #645452;
+  color: #bdb0aece;
 }
 
 .row-edits {
@@ -147,7 +147,7 @@ li button:hover {
 .row-edits>.task-edit {
   flex: 3;
   padding: 10px;
-  background-color: #d6c9c99f;
+  background-color: #bdb0aece;
   border: 1px solid #3d363cab;
   border-radius: 4px;
   font-size: 15px;

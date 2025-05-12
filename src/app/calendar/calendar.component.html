@@ -68,6 +68,8 @@
       <div class="schedule-headline">
         <div *ngIf="activeDay(); else selectDayPrompt">
           {{ activeDay()!.toLocaleString(DATE_MED) }}
+          <br />
+          Lista zadań tego dnia:
         </div>
         <ng-template #selectDayPrompt>
           <div>Wybierz dzień</div>

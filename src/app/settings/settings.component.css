@@ -1,0 +1,80 @@
+
+* {
+  box-sizing: border-box;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  color: #1e1e1e;
+}
+
+.box {
+  padding-top: 20px;
+  padding-left:60px; ;
+  padding-right:60px;;
+  padding-bottom:40px; 
+  background: #1e1e1e;
+  
+}
+h2 {
+  margin-bottom: 20px;
+  color: #c4b5b5c4;
+}
+label{
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #aa9795;
+}
+
+.row-inputs select,
+.row-inputs input[type="date"] {
+  flex: 1.2;
+  min-width: 100px;
+}
+
+.row-inputs button {
+  flex: 1;
+  min-width: 80px;
+  max-width: 80px;
+  border-radius: 4px;
+}
+input[type="password"] {
+  width: 100%;
+  flex: 1 1 200px;
+  padding: 10px;
+  background-color: #bdb0aece;
+  border: 1px solid #3d363cab;
+  border-radius: 6px;
+  font-size: 15px;
+}
+.delete{
+    margin-top: 20px;
+}
+.del-btn{
+background: #6b555d;
+  color: #bdb0aece;
+  border: none;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 6px;
+  padding: 12px;
+  cursor: pointer;
+  width: 150px;
+  text-decoration: none;
+}
+button[type="submit"] {
+  background: #6b555d;
+  color: #bdb0aece;
+  border: none;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 6px;
+  margin-top: 10px;
+  padding: 12px;
+  cursor: pointer;
+  width: 150px;
+  text-decoration: none;
+}
+button:hover {
+  background: #645452;
+  color: #bdb0aece;
+}
