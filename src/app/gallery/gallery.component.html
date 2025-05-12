@@ -1,36 +1,43 @@
-<div class="btnn-upload" (click)="fileInput.click()">
-  <ng-container *ngIf="!selectedFile">
-    <span>Dodaj plik</span>
-  </ng-container>
-  <ng-container *ngIf="selectedFile">
-    <span>Wysyłanie...</span>
-  </ng-container>
-  <input
-    #fileInput
-    type="file"
-    hidden
-    accept="image/*"
-    (change)="handleClickAndUpload($event)"
-  />
-</div>
 <div class="box">
   <div class="header">
     <h2>Galeria użytkownika</h2>
   </div>
-  <div *ngIf="gallery.length > 0; else brakZdjec">
+
+  <div *ngIf="gallery.length > 0; else noFiles">
     <h3>Twoje zdjęcia:</h3>
     <div class="gallery-container">
       <div *ngFor="let img of gallery" class="gallery-item">
         <img [src]="img.url" alt="{{ img.fileName }}" />
-        <button class="delete-btn" (click)="deleteImage(img.id)">Usuń</button>
+        <div class="middle">
+          <div class="delete-btn" (click)="deleteImage(img.id)">
+            Delete photo
+          </div>
+        </div>
       </div>
     </div>
+    <div class="btnn-upload" (click)="fileInput.click()">
+      <ng-container *ngIf="!selectedFile">
+        <span>Dodaj plik</span>
+      </ng-container>
+      <ng-container *ngIf="selectedFile">
+        <span>Wysyłanie...</span>
+      </ng-container>
+      <input
+        #fileInput
+        type="file"
+        hidden
+        accept="image/*"
+        (change)="handleClickAndUpload($event)"
+      />
+    </div>
   </div>
-  <ng-template #brakZdjec>
-    <h3>
-      Brak zdjęć w galerii.
-      <br />
-      Dodawaj zdjęcia poprzez przycisk w dolnym rogu galerii!
-    </h3>
+  <ng-template #noFiles>
+    <div class="empty">
+      <h3>
+        Brak zdjęć w galerii.
+        <br />
+        Dodawaj zdjęcia poprzez przycisk w dolnym rogu swojej galerii!
+      </h3>
+    </div>
   </ng-template>
 </div>
