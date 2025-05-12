@@ -25,7 +25,7 @@ export class TaskService {
     return this.http.post<Task>(this.apiUrl, task);
   }
 
-  //dodawanie zadan dla usera
+  //pokazywanie zadan dla usera
   getTasksForUser(userId: string, status: string = '') {
     let url = `http://localhost:3000/tasks?userId=${userId}`;
     if (status) {
