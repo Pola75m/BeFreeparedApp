@@ -70,7 +70,7 @@ export class MyListComponent implements OnInit {
       } else {
         task.deadline = this.formatDate(task.deadline);
       }
-      this.tasks.push(task);
+      this.tasks.unshift(task);
       this.newTask = { id: '', task_name: '', task_status: '', deadline: '', userId: '', username: undefined };
       // w takiej kolejnosci jak w bazie danych ^
     });

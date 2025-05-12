@@ -178,7 +178,7 @@ app.post('/tasks', (req, res) => {
   
     if (!userId) return res.status(400).send('Id usera jest potrzebne...');
   
-    let query = 'SELECT * FROM tasks WHERE userId = ?';
+    let query = 'SELECT * FROM tasks WHERE userId = ? ORDER BY id DESC';
     const values = [userId];
   
     if (status !== undefined && status !== '') {

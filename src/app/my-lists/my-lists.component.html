@@ -18,8 +18,8 @@
         />
         <select
           [(ngModel)]="newTask.task_status"
-          name="status"
-        >
+          name="status" required>
+          <option value="" disabled selected>-- wybierz status--</option>
           <option value="-">Bez statusu</option>
           <option value="Bardzo ważne">Bardzo ważne</option>
           <option value="Ważne">Ważne</option>
