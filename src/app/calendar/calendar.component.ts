@@ -31,7 +31,6 @@ export class CalendarComponent {
     return this._externalMeetings();
   }
   @Output() daySelected = new EventEmitter<DateTime | null>();
-  //wazne 
 
   private userId: string = '';
   constructor(private taskService: TaskService) {}
@@ -55,6 +54,7 @@ export class CalendarComponent {
     }
     return days;
   });
+  //zbieranie usera
   ngOnInit() {
     const user = JSON.parse(localStorage.getItem('user')!);
     this.userId = user?.Uid;
@@ -62,7 +62,7 @@ export class CalendarComponent {
       this.fetchTasks();
     }
   }
-
+  //pobieranie taskow
   fetchTasks() {
     if (!this.userId) return;
     this.taskService.getTasksForUser(this.userId).subscribe((tasks) => {
@@ -117,8 +117,6 @@ export class CalendarComponent {
     }
     return count;
   });
-
-  
   //funkcje...
   goToPreviousMonth(): void {
     const newMonth = this.firstDayOfActiveMonth().minus({ month: 1 });

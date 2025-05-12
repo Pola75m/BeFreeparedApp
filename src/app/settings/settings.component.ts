@@ -30,7 +30,6 @@ export class SettingsComponent {
       this.passwordMismatch = true;
       return;
     }
-
     // sprawdzanie dostępności loginu
     if (this.newLogin) {
       this.http.get<any[]>(`http://localhost:3000/users?login=${this.newLogin}`).subscribe(users => {
@@ -81,9 +80,5 @@ export class SettingsComponent {
       console.error(err);
       alert('Wystąpił bład w usuwaniu konta.');
     });
-  }
-  //mode
-  toggleTheme() {
-    document.body.className = this.theme;
   }
 }

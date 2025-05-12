@@ -38,11 +38,10 @@ export class MyCalendarPageComponent {
     }
     return result;
   }
-    // formatowanie daty
+  // formatowanie daty
     formatDate(dateString: string): string {
       if (dateString === null || !dateString) return '-';
-      //const date = new Date(dateString);
-      return DateTime.fromISO(dateString, { zone: 'utc' }).startOf('day').toFormat('yyyy-MM-dd');
+      return DateTime.fromISO(dateString, { zone: 'Europe/Warsaw' }).startOf('day').toFormat('yyyy-MM-dd');
     }
   // pokazywanie istniejacych zadan
   ngOnInit() {
@@ -50,7 +49,7 @@ export class MyCalendarPageComponent {
     this.userId = user?.Uid;
     this.fetchTasks();
   }
-// zebranie zadan w calosc
+// zebranie zadan
 fetchTasks() {
   if (!this.userId) return;
   this.tasks = [];

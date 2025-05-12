@@ -24,7 +24,6 @@ export class LoginComponent {
         next: (res) => {
           alert('Zalogowano!');
           this.userService.setUser(res.user);
-          //localStorage.setItem('user', JSON.stringify(res.user)); // store logged-in user
           this.router.navigate(['/home']);
           console.log('Zalogowany:', this.login);
           
@@ -36,5 +35,4 @@ export class LoginComponent {
   goToSignUp() {
     this.router.navigate(['/sign-in']);
   }
-
 }

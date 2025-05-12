@@ -9,14 +9,15 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { GalleryComponent } from "./gallery/gallery.component";
 import { CommunitygalleryComponent } from './communitygallery/communitygallery.component';
 import { MyCalendarPageComponent } from "./my-calendar-page/my-calendar-page.component";
-import { AuthGuard } from "./auth.guard"; //plik do autentykacji userów
 import { SettingsComponent } from './settings/settings.component';
+import { AuthGuard } from "./auth.guard"; //plik do autentykacji userów
+
 
 
 //export routes wszystkich componentów
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'my-lists', component: MyListComponent, canActivate: [AuthGuard] },
+  { path: 'my-lists', component: MyListComponent, canActivate: [AuthGuard] }, //bez zalogowania nie beda widoczne
   { path: 'calendar-page', component: CalendarPageComponent, canActivate: [AuthGuard] },
   { path: 'gallery', component: GalleryComponent, canActivate: [AuthGuard]},
   { path: 'community-gallery', component: CommunitygalleryComponent, canActivate: [AuthGuard]},
@@ -24,7 +25,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'my-calendar-page', component: MyCalendarPageComponent, canActivate: [AuthGuard]},
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, // default do strony logowania
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, // defaultowa strona
 ];
 
 @NgModule({

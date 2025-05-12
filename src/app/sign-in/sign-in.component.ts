@@ -16,7 +16,7 @@ export class SignInComponent {
   password = '';
 
   constructor(private http: HttpClient, private router: Router) {}
-
+  //rejestrowanie, sprawdzanie czy login wolny
   register(form:NgForm) {
     if(!form.valid){
       return alert('Musisz wpisać login i hasło');
@@ -35,6 +35,7 @@ export class SignInComponent {
         }}       
       });
   }
+  //przeniesienie na strone logowania
   goToLogin() {
     this.router.navigate(['/login']);
   }

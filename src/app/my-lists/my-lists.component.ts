@@ -38,21 +38,18 @@ export class MyListComponent implements OnInit {
     }
     return result;
   }
-  
   // formatowanie daty
   formatDate(dateString: string): string {
     if (dateString === null || !dateString) return '-';
     //const date = new Date(dateString);
-    return DateTime.fromISO(dateString, { zone: 'utc' }).startOf('day').toFormat('yyyy-MM-dd');
+    return DateTime.fromISO(dateString, { zone: 'Europe/Warsaw' }).startOf('day').toFormat('yyyy-MM-dd');
   }
-
   // pokazywanie istniejacych zadan
   ngOnInit() {
     const user = JSON.parse(localStorage.getItem('user')!);
     this.userId = user?.Uid;
     this.fetchTasks();
   }
-
   // dodawanie zadan
   addTask() {
     if (!this.newTask.task_name || !this.userId || this.newTask.task_status === '') {
@@ -75,7 +72,6 @@ export class MyListComponent implements OnInit {
       // w takiej kolejnosci jak w bazie danych ^
     });
   }
-
   // edytowanie zadan
   startEdit(task: Task) {
     this.editingTask = { ...task };
@@ -83,6 +79,7 @@ export class MyListComponent implements OnInit {
       this.editingTask.deadline = '';
     }
   }
+  //edytowanie zadan cd
   saveEdit() {
     if (!this.editingTask) return;
     if (!this.editingTask.deadline || this.editingTask.deadline === '') {
@@ -97,10 +94,8 @@ export class MyListComponent implements OnInit {
             ...updatedTask
           };
         }
-
         this.editingTask = null;
         this.fetchTasks();
-        
       },
       (error) => {
         console.error('Error updating task:', error);
@@ -110,7 +105,6 @@ export class MyListComponent implements OnInit {
   cancelEdit() {
     this.editingTask = null;
   }
-
   // usuwanie zadan
   deleteTask(id: string) {
     if (!confirm('Jesteś pewny, że chcesz usunąć to zadanie? Nie będzie można cofnąć :c ')) return;
@@ -133,7 +127,7 @@ export class MyListComponent implements OnInit {
     if (!this.userId) return;
     let query = this.userId;
     if (this.selectedStatus === 'NULL') {
-      statusParametr = 'null';  // backend expects literal string 'null'
+      statusParametr = 'null';
     } else if (this.selectedStatus !== 'ALL') {
       statusParametr = this.selectedStatus;
     }  

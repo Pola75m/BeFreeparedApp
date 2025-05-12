@@ -11,7 +11,7 @@ app.use(express.json());
 
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'root',       // root jest tymczasowy
+    user: 'root',
     password: '',       
     database: 'befreepareddb' 
   });
@@ -33,8 +33,7 @@ app.post('/register', (req, res) => {
     if (err) return res.status(500).json({ message: 'Błąd bazy danych', error: err });
     
     if (results.length > 0) {
-      // Login already exists
-      return res.status(409).json({ message: 'User login already exists' });
+      return res.status(409).json({ message: 'Taki login już istnieje, użyj innego' });
     }
   const query = `INSERT INTO users (login, password) VALUES (?, ?)`;
   db.query(query, [login, password], (err, result) => {
@@ -98,7 +97,7 @@ db.query(sql, values, (err, result) => {
 });
 });
 
-// Usuwanie user
+// Usuwanie usera
 app.delete('/users/:id', (req, res) => {
   const userId = req.params.id;
 
@@ -122,7 +121,7 @@ app.post('/tasks', (req, res) => {
     if (!deadline || deadline === '-') {
       deadline = null;
     }else {
-      deadline = DateTime.fromISO(deadline, { zone: 'utc+1' }).startOf('day').toISODate();;
+      deadline = DateTime.fromISO(deadline, { zone: 'Europe/Warsaw' }).startOf('day').toISODate();;
 
     }
     const query = `INSERT INTO tasks (task_name, task_status, deadline, userId)
@@ -140,7 +139,7 @@ app.post('/tasks', (req, res) => {
     const { task_name, task_status, deadline } = req.body;
 
     const parsedDeadline = deadline 
-      ? DateTime.fromISO(deadline, { zone: 'utc+1' }).startOf('day').toJSDate()
+      ? DateTime.fromISO(deadline, { zone: 'Europe/Warsaw' }).startOf('day').toJSDate()
       : null;
 
     const query = 'UPDATE tasks SET task_name = ?, task_status = ?, deadline = ? WHERE id = ?';
@@ -171,7 +170,7 @@ app.post('/tasks', (req, res) => {
     });
   });
 
-  // Zbieranie wszystkich zadań w zależności od usera
+  // Zbieranie wszystkich zadan w zależności od usera
   app.get('/tasks', (req, res) => {
     const userId = req.query.userId;
     const status = req.query.status;
@@ -206,7 +205,7 @@ app.post('/tasks', (req, res) => {
     });
   });  
   
-// zbieranie wszystkich taskow do kalendarza
+// zbieranie wszystkich zadan do kalendarza
 app.get('/all-tasks', (req, res) => {
   const query = `
   SELECT tasks.*, users.login AS username

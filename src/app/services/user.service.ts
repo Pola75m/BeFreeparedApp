@@ -22,7 +22,7 @@ export class UserService {
   }
   setUser(user: any) {
     this.user$.next(user);
-    localStorage.setItem('user', JSON.stringify(user)); // Store user data in localStorage
+    localStorage.setItem('user', JSON.stringify(user));
   }
 
   removeUser() {

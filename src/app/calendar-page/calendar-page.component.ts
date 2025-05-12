@@ -15,7 +15,7 @@ import { TaskService, Task } from '../services/task.service';
 export class CalendarPageComponent {
   allMeetings: { [date: string]: string[] } = {};
   constructor(private taskService: TaskService) {}
-
+  //czesc odpowiedzialna za zadania
   ngOnInit(): void {
     this.taskService.getAllTasks().subscribe((tasks: Task[]) => {
       const result: { [date: string]: string[] } = {};
