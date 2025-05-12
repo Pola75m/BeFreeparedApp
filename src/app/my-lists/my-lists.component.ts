@@ -14,7 +14,7 @@ import { DateTime } from 'luxon';
 export class MyListComponent implements OnInit {
   tasks: Task[] = [];
   newTask: Task = {
-    id: '', task_name: '', task_status: '', deadline: '', userId: '', username: '',
+    id: '', task_name: '', task_status: '-', deadline: '', userId: '', username: '',
   };
   userId: string ='';
   editingTask: Task | null = null;
@@ -55,7 +55,10 @@ export class MyListComponent implements OnInit {
 
   // dodawanie zadan
   addTask() {
-    if (!this.newTask.task_name || !this.userId) return;
+    if (!this.newTask.task_name || !this.userId || this.newTask.task_status === '') {
+      alert('Uzupełnij wszystkie wymagane pola, nazwę zadania i status!');
+      return;
+    }
     this.newTask.userId= this.userId;
 
     if (!this.newTask.deadline) {
