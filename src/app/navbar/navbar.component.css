@@ -81,9 +81,10 @@
 }
 .dropdown-content a {
   color: #aa9795;
-  padding: 10px;
+  padding: 12px;
   text-decoration: none;
   display: block;
+  margin-left: 5px;
   text-align: left;
 }
 .navbar-actions {
