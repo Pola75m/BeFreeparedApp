@@ -126,7 +126,7 @@ export class MyListComponent implements OnInit {
     let statusParametr = '';
     if (!this.userId) return;
     let query = this.userId;
-    if (this.selectedStatus === 'NULL') {
+    if (this.selectedStatus === '-') {
       statusParametr = 'null';
     } else if (this.selectedStatus !== 'ALL') {
       statusParametr = this.selectedStatus;

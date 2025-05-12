@@ -41,25 +41,27 @@ h2 {
   
 }
 .gallery-container {
-  column-count: 5;
-  column-gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
   margin-top: 20px;
 }
 
 .gallery-item {
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 16px;
-  break-inside: avoid;
   position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .gallery-item img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   border-radius: 8px;
   transition: 0.5s ease;
+  display: block;
 }
 
 h2 {

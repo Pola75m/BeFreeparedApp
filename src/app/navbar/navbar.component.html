@@ -2,7 +2,8 @@
   <div class="navbar-logo">
     <a href="home" class="navbar-logo">BeFreepared</a>
   </div>
-  <ul class="navbar-links">
+   <div class="menu-toggle" (click)="toggleMenu()">&#9776;</div>
+  <ul class="navbar-links" [ngClass]="{'open' : menuOpen }">
     <li>
       <a [routerLink]="['home']" routerLinkActive="active-route"
         >Strona główna</a
@@ -14,7 +15,7 @@
       >
     </li>
     <li class="dropdown-nav">
-      <a class="dropdown-btn" routerLinkActive="active">Kalendarz</a>
+      <span class="dropdown-btn">Kalendarz</span>
       <div class="dropdown-content">
         <a [routerLink]="['/my-calendar-page']" routerLinkActive="active-route"
           >Mój Kalendarz</a
@@ -25,7 +26,7 @@
       </div>
     </li>
     <li class="dropdown-nav">
-      <a class="dropdown-btn" routerLinkActive="active-route">Galeria</a>
+      <span class="dropdown-btn">Galeria</span>
       <div class="dropdown-content">
         <a [routerLink]="['/gallery']" routerLinkActive="active-route"
           >Moja Galeria</a

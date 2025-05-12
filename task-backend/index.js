@@ -177,17 +177,19 @@ app.post('/tasks', (req, res) => {
   
     if (!userId) return res.status(400).send('Id usera jest potrzebne...');
   
-    let query = 'SELECT * FROM tasks WHERE userId = ? ORDER BY id DESC';
+    let query = 'SELECT * FROM tasks WHERE userId = ?';
     const values = [userId];
   
     if (status !== undefined && status !== '') {
-      if (status === 'null') {
-        query += ' AND task_status IS NULL';
+      if (status === '-') {
+        query += ' AND task_status IS -';
       } else {
         query += ' AND task_status = ?';
         values.push(status);
       }
     }
+
+    query+= 'ORDER BY id DESC';
   
     db.query(query, values, (err, results) => {
       if (err) return res.status(500).send(err);

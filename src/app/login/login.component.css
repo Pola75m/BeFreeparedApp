@@ -60,8 +60,12 @@ button[type=submit] {
   padding: 14px 20px;
   margin: 10px 0;
   border: none;
- border-radius: 6px;
+  border-radius: 6px;
   cursor: pointer;
+}
+.button:hover {
+  background: #846D6A;
+  color: #1e1e1e;
 }
 p{
   font-size: 18px;

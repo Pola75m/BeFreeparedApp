@@ -15,7 +15,17 @@
         </div>
       </div>
     </div>
-    <div class="btnn-upload" (click)="fileInput.click()">
+  </div>
+  <ng-template #noFiles>
+    <div class="empty">
+      <h3>
+        Brak zdjęć w galerii.
+        <br />
+        Dodawaj zdjęcia poprzez przycisk w dolnym rogu swojej galerii!
+      </h3>
+    </div>
+  </ng-template>
+  <div class="btnn-upload" (click)="fileInput.click()">
       <ng-container *ngIf="!selectedFile">
         <span>Dodaj plik</span>
       </ng-container>
@@ -30,14 +40,4 @@
         (change)="handleClickAndUpload($event)"
       />
     </div>
-  </div>
-  <ng-template #noFiles>
-    <div class="empty">
-      <h3>
-        Brak zdjęć w galerii.
-        <br />
-        Dodawaj zdjęcia poprzez przycisk w dolnym rogu swojej galerii!
-      </h3>
-    </div>
-  </ng-template>
 </div>

@@ -63,6 +63,10 @@ button[type=submit] {
  border-radius: 6px;
   cursor: pointer;
 }
+.button:hover {
+  background: #846D6A;
+  color: #1e1e1e;
+}
 p{
   font-size: 18px;
   font-weight: 500;
