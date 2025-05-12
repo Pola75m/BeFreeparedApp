@@ -27,9 +27,10 @@ h3{
   color: #c4b5b5c4;
 }
 h6 {
+  margin-top: 10px;
   font-weight: 230;
   line-height: 32px;
-    color: #c4b5b5c4;
+  color: #c4b5b5c4;
 }
 p{
   margin-top: 5px;
@@ -60,6 +61,7 @@ p{
   color: #1e1e1e;
   font-weight: 500;
   font-size: 18px;
+  margin-top: 10px;
   padding: 12px 25px;
   cursor: pointer;
   background: linear-gradient(268.96deg, #6b5568 -7.34%, #a86367 3.56%, #847382 107.34%);
