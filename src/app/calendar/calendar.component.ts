@@ -21,7 +21,15 @@ import { TaskService } from '../services/task.service';
   standalone: true,
 })
 export class CalendarComponent {
-  @Input() meetings: Meetings | undefined;
+  private _externalMeetings = signal<Meetings>({});
+  @Input() set meetings(value: Meetings | undefined) {
+    if (value) {
+      this._externalMeetings.set(value);
+    }
+  }
+  get meetings(): Meetings {
+    return this._externalMeetings();
+  }
   @Output() daySelected = new EventEmitter<DateTime | null>();
   //wazne 
 
@@ -68,14 +76,14 @@ export class CalendarComponent {
           meetings[date].push(task.task_name);
         }
       });
-      this.meetings = meetings;
+      this._externalMeetings.set(meetings);
       console.log('Fetched meetings:', this.meetings);
     });
   }
   //zabawa z datami
   DATE_MED = DateTime.DATE_MED;
   activeDayMeetings: Signal<string[]> = computed(() => {
-    const meetings = this.meetings;
+    const meetings = this._externalMeetings();
     if (!meetings) {
       return [];
     }
@@ -91,7 +99,7 @@ export class CalendarComponent {
   });
   //licznik zadan
   monthlyTaskCount: Signal<number> = computed(() => {
-    const meetings = this.meetings;
+    const meetings = this._externalMeetings();
     if (!meetings) {
       return 0;
     }
