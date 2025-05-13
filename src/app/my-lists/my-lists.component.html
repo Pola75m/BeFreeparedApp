@@ -20,7 +20,6 @@
           [(ngModel)]="newTask.task_status"
           name="status" required>
           <option value="" disabled selected>-- wybierz status--</option>
-          <option value="-">Bez statusu</option>
           <option value="Bardzo ważne">Bardzo ważne</option>
           <option value="Ważne">Ważne</option>
           <option value="Nieważne">Nieważne</option>
@@ -42,7 +41,6 @@
           name="status1"
         >
           <option value="ALL">Wszystkie</option>
-          <option value="-">Bez statusu</option>
           <option value="Bardzo ważne">Bardzo ważne</option>
           <option value="Ważne">Ważne</option>
           <option value="Nieważne">Nieważne</option>
@@ -69,7 +67,6 @@
               <option value="Ważne">Ważne</option>
               <option value="Nieważne">Nieważne</option>
               <option value="Luźne">Luźne</option>
-              <option value="-">Bez statusu</option>
             </select>
             <input [(ngModel)]="editingTask.deadline" type="date" />
             <div class="edit-btn">
