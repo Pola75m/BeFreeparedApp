@@ -2,7 +2,6 @@
   <div class="header">
     <h2>Galeria użytkownika</h2>
   </div>
-
   <div *ngIf="gallery.length > 0; else noFiles">
     <h3>Twoje zdjęcia:</h3>
     <div class="gallery-container">
@@ -26,18 +25,18 @@
     </div>
   </ng-template>
   <div class="btnn-upload" (click)="fileInput.click()">
-      <ng-container *ngIf="!selectedFile">
-        <span>Dodaj plik</span>
-      </ng-container>
-      <ng-container *ngIf="selectedFile">
-        <span>Wysyłanie...</span>
-      </ng-container>
-      <input
-        #fileInput
-        type="file"
-        hidden
-        accept="image/*"
-        (change)="handleClickAndUpload($event)"
-      />
-    </div>
+    <ng-container *ngIf="!selectedFile">
+      <span>Dodaj plik</span>
+    </ng-container>
+    <ng-container *ngIf="selectedFile">
+      <span>Wysyłanie...</span>
+    </ng-container>
+    <input
+      #fileInput
+      type="file"
+      hidden
+      accept="image/*"
+      (change)="handleClickAndUpload($event)"
+    />
+  </div>
 </div>

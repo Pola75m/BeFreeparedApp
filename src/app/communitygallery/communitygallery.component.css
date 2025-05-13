@@ -10,8 +10,8 @@
   padding-right:60px;;
   padding-bottom:40px; 
   background: #1e1e1e;
+  
 }
-
 .gallery-container {
   column-count: 5;
   column-gap: 16px;
@@ -22,6 +22,7 @@
   display: inline-block;
   width: 100%;
   margin-bottom: 16px;
+  break-inside: avoid;
   position: relative;
 }
 
@@ -37,7 +38,9 @@ h2 {
   color: #c4b5b5c4;
 }
 
-h3, h4 {
+h3{color: #c4b5b5c4} 
+h4 {
+  text-align: center;
   color: #c4b5b5c4;
 }
 
@@ -53,4 +56,106 @@ color: #c4b5b531;
 }
 .empty>h3{
   color: #c4b5b544;
+}
+
+@media (max-width: 925px) {
+  .box {
+  padding-top: 20px;
+  padding-left:30px; ;
+  padding-right:30px;;
+  padding-bottom:20px; 
+  background: #1e1e1e;
+  
+}
+.gallery-container {
+  column-count: 4;
+  column-gap: 15px;
+  margin-top: 15px;
+}
+h4{
+  font-size: 16px;
+}
+.gallery-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 16px;
+  break-inside: avoid;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: 0.5s ease;
+}
+.delete-btn{
+  padding: 5px;
+  border-radius: 10px;
+}
+}
+@media (max-width: 725px) {
+  .box {
+  padding-top: 20px;
+  padding-left:30px; ;
+  padding-right:30px;;
+  padding-bottom:20px; 
+  background: #1e1e1e;
+  
+}
+h4{
+  font-size: 14px;
+}
+  .gallery-container {
+  column-count: 3;
+  column-gap: 10px;
+  margin-top: 10px;
+}
+
+.gallery-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 16px;
+  break-inside: avoid;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: 0.5s ease;
+}
+.delete-btn{
+  padding: 5px;
+  border-radius: 10px;
+}
+}
+@media (max-width: 550px) {
+  .box {
+  padding-top: 15px;
+  padding-left:20px; ;
+  padding-right:20px;;
+  padding-bottom:15px; 
+  background: #1e1e1e;
+  
+}
+h4{
+  font-size: 14px;
+}
+}
+@media (max-width: 450px) {
+  .box {
+  padding-top: 15px;
+  padding-left:20px; ;
+  padding-right:20px;;
+  padding-bottom:15px; 
+  background: #1e1e1e;
+  
+}
+h4{
+  font-size: 12px;
+}
 }
