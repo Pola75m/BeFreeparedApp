@@ -1,9 +1,10 @@
 <nav class="navbar">
+  <div class="menu-toggle" (click)="toggleMenu()">&#9776;</div>
   <div class="navbar-logo">
     <a href="home" class="navbar-logo">BeFreepared</a>
   </div>
-   <div class="menu-toggle" (click)="toggleMenu()">&#9776;</div>
-  <ul class="navbar-links" [ngClass]="{'open' : menuOpen }">
+
+  <ul class="navbar-links" [ngClass]="{ open: menuOpen }">
     <li>
       <a [routerLink]="['home']" routerLinkActive="active-route"
         >Strona główna</a
