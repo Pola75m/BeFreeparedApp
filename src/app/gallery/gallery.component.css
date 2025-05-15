@@ -186,6 +186,11 @@ color: #c4b5b531;
   padding: 5px;
   border-radius: 10px;
 }
+.empty{
+margin: 30px;
+font-size: 30px;
+padding: 40px;
+}
 }
 @media (max-width: 600px) {
   .box {
@@ -220,5 +225,50 @@ color: #c4b5b531;
 .delete-btn{
   padding: 5px;
   border-radius: 10px;
+}
+.empty{
+margin: 20px;
+font-size: 26px;
+padding: 30px;
+}
+}
+
+@media (max-width: 500px) {
+  .box {
+  padding-top: 10px;
+  padding-left:10px; 
+  padding-right:10px;
+  padding-bottom:10px; 
+  
+}
+.gallery-container {
+  column-count: 3;
+  column-gap: 5px;
+  margin-top: 10px;
+}
+
+.gallery-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+  break-inside: avoid;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: 0.5s ease;
+}
+.delete-btn{
+  padding: 4px;
+  border-radius: 10px;
+}
+.empty{
+margin: 20px;
+font-size: 26px;
+padding: 30px;
 }
 }
