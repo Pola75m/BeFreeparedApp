@@ -1,47 +1,45 @@
-<div class="background">
-  <div class="flex-container">
-    <div class="flex-item-left">
-      <div *ngIf="!isLoggedIn()">
-        <h2>
-          Organizuj swoją pracę i życie codzienne w miejscu przyjaznym
-          wszystkim!
-          <br />
-          Dzięki nam zapomnisz tylko o lenistwie!
-        </h2>
-        <h6>
-          Skorzystaj z naszej aplikacji i pożegnaj się z prokrastynacją dzięki
-          najprzyjaźniejszej użytkownikowi aplikacji organizacyjnej.
-        </h6>
-        <button class="btn-home" [routerLink]="['/sign-in']">
-          Dołącz za darmo
-        </button>
-        <p class="ad-text">
-          Przyłącz się do naszych zadowolonych użytkowników i poznaj magię
-          organizacji
-        </p>
-      </div>
-      <div *ngIf="isLoggedIn()">
-        <h2>
-          Dziękujemy Ci za korzystanie z naszej aplikacji. <br />Życzymy Ci
-          dobrej pracy i swobodnych dni.
-        </h2>
-        <h6>Rozpocznij z nami {{ dayOfWeek }} :D</h6>
-        <p class="ad-text">Zaczynamy!</p>
-        <button class="btn-home" [routerLink]="['/my-lists']">
-          Przejdź do swojej listy
-        </button>
-      </div>
+<div class="flex-container">
+  <div class="flex-item-left">
+    <div *ngIf="!isLoggedIn()">
+      <h2>
+        Organizuj swoją pracę i życie codzienne w miejscu przyjaznym wszystkim!
+        <br />
+        Dzięki nam zapomnisz tylko o lenistwie!
+      </h2>
+      <h6>
+        Skorzystaj z naszej aplikacji i pożegnaj się z prokrastynacją dzięki
+        najprzyjaźniejszej użytkownikowi aplikacji organizacyjnej.
+      </h6>
+      <button class="btn-home" [routerLink]="['/sign-in']">
+        Dołącz za darmo
+      </button>
+      <p class="ad-text">
+        Przyłącz się do naszych zadowolonych użytkowników i poznaj magię
+        organizacji
+      </p>
     </div>
-    <div class="flex-item-right">
-      <img
-        class="animol"
-        src="assets/test.gif"
-        alt="dancing animal"
-        width="500px"
-      />
+    <div *ngIf="isLoggedIn()">
+      <h2>
+        Dziękujemy Ci za korzystanie z naszej aplikacji. <br />Życzymy Ci dobrej
+        pracy i swobodnych dni.
+      </h2>
+      <h6>Rozpocznij z nami {{ dayOfWeek }} :D</h6>
+      <p class="ad-text">Zaczynamy!</p>
+      <button class="btn-home" [routerLink]="['/my-lists']">
+        Przejdź do swojej listy
+      </button>
     </div>
   </div>
+  <div class="flex-item-right">
+    <img
+      class="animol"
+      src="assets/test.gif"
+      alt="dancing animal"
+      width="500px"
+    />
+  </div>
 </div>
+
 <div class="flex-container">
   <div class="flex-item-left">
     <p class="ad-text">Organizuj jak chcesz</p>

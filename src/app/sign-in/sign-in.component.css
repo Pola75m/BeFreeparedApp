@@ -85,3 +85,98 @@ span{
 .inputs{
     margin: 36px;
 }
+@media screen and (max-width: 1340px) {
+.all-box{
+ justify-self: center;
+  height:auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 40%;
+  padding: 60px 40px;
+  padding-bottom: 90px;
+  text-align: center;
+}
+}
+@media screen and (max-width: 1220px) {
+.all-box{
+ justify-self: center;
+height:auto;
+position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 50%;
+  padding: 40px 30px;
+  padding-bottom: 90px;
+  text-align: center;
+}
+
+.all-box>h2{
+font-size: 30px;
+margin-bottom: 10px;
+}
+}
+@media screen and (max-width: 910px) {
+.all-box{
+ justify-self: center;
+height:auto;
+position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 60%;
+  padding: 30px 20px;
+  padding-bottom: 90px;
+  text-align: center;
+}
+.all-box>h2{
+font-size: 28px;
+margin-bottom: 10px;
+}
+}
+@media screen and (max-width: 660px) {
+.all-box{
+ justify-self: center;
+height:auto;
+position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 70%;
+  padding: 30px 20px;
+  padding-bottom: 90px;
+  text-align: center;
+}
+.all-box>h2{
+font-size: 26px;
+margin-bottom: 10px;
+}
+}
+@media screen and (max-width: 525px) {
+.all-box{
+  justify-self: center;
+height:auto;
+position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 90%;
+  padding: 20px 10px;
+  padding-bottom: 90px;
+  text-align: center;
+}
+.all-box>h2{
+font-size: 28px;
+margin-bottom: 10px;
+}
+p{
+  font-size: 18px;
+}
+}

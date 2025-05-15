@@ -3,48 +3,61 @@
   <div class="navbar-logo">
     <a href="home" class="navbar-logo">BeFreepared</a>
   </div>
-
-  <ul class="navbar-links" [ngClass]="{ open: menuOpen }">
-    <li>
-      <a [routerLink]="['home']" routerLinkActive="active-route"
-        >Strona główna</a
-      >
-    </li>
-    <li>
-      <a [routerLink]="['/my-lists']" routerLinkActive="active-route"
-        >Moje zadania</a
-      >
-    </li>
-    <li class="dropdown-nav">
-      <span class="dropdown-btn">Kalendarz</span>
-      <div class="dropdown-content">
-        <a [routerLink]="['/my-calendar-page']" routerLinkActive="active-route"
-          >Mój Kalendarz</a
+  <div>
+    <ul class="navbar-links" [ngClass]="{ open: menuOpen }">
+      <li>
+        <a [routerLink]="['home']" routerLinkActive="active-route"
+          >Strona główna</a
         >
-        <a [routerLink]="['/calendar-page']" routerLinkActive="active-route"
-          >Społeczność</a
+      </li>
+      <li>
+        <a [routerLink]="['/my-lists']" routerLinkActive="active-route"
+          >Moje zadania</a
         >
-      </div>
-    </li>
-    <li class="dropdown-nav">
-      <span class="dropdown-btn">Galeria</span>
-      <div class="dropdown-content">
-        <a [routerLink]="['/gallery']" routerLinkActive="active-route"
-          >Moja Galeria</a
+      </li>
+      <li class="dropdown-nav">
+        <span class="dropdown-btn">Kalendarz</span>
+        <div class="dropdown-content">
+          <a
+            [routerLink]="['/my-calendar-page']"
+            routerLinkActive="active-route"
+            >Mój Kalendarz</a
+          >
+          <a [routerLink]="['/calendar-page']" routerLinkActive="active-route"
+            >Społeczność</a
+          >
+        </div>
+      </li>
+      <li class="dropdown-nav">
+        <span class="dropdown-btn">Galeria</span>
+        <div class="dropdown-content">
+          <a [routerLink]="['/gallery']" routerLinkActive="active-route"
+            >Moja Galeria</a
+          >
+          <a
+            [routerLink]="['/community-gallery']"
+            routerLinkActive="active-route"
+            >Społeczność</a
+          >
+        </div>
+      </li>
+      <li>
+        <a [routerLink]="['/settings']" routerLinkActive="active-route"
+          >Ustawienia</a
         >
-        <a [routerLink]="['/community-gallery']" routerLinkActive="active-route"
-          >Społeczność</a
-        >
-      </div>
-    </li>
-    <li>
-      <a [routerLink]="['/settings']" routerLinkActive="active-route"
-        >Ustawienia</a
-      >
-    </li>
-  </ul>
-
-  <div class="navbar-actions">
+      </li>
+      <button *ngIf="!isLoggedIn()" class="btn-nav" routerLink="/login">
+        Zaloguj się
+      </button>
+      <button *ngIf="!isLoggedIn()" class="btn-nav" routerLink="/sign-in">
+        Zarejestruj się
+      </button>
+      <button *ngIf="isLoggedIn()" class="btn-nav" (click)="logout()">
+        Wyloguj
+      </button>
+    </ul>
+  </div>
+  <div class="navbar-actions" [ngClass]="{ open: menuOpen }">
     <h3 class="hello" *ngIf="isLoggedIn()">Cześć, {{ username }}!</h3>
     <button *ngIf="!isLoggedIn()" class="btn-nav" routerLink="/login">
       Zaloguj się

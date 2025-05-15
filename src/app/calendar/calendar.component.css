@@ -153,7 +153,21 @@
   gap: 10px;
   }
   @media screen and (max-width: 920px) {
-  .calendar-container {
+
+.container{
+  justify-items: center;
+  margin: 10px;
+  padding-top: 20px;
+  padding-left:0;
+  padding-right:0;
+  padding-bottom:40px; ;
+  width: auto;
+  height: 100%;
+  text-align: left;
+  margin-bottom: 20px;
+  color: #c4b5b5c4;
+}
+    .calendar-container {
     flex-direction: column;
     align-items: center;
   }
